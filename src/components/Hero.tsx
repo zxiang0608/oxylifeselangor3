@@ -25,7 +25,7 @@ export default function Hero() {
         return () => clearInterval(flashInterval);
     }, []);
 
-    const containerClass = "max-w-[1600px] w-[90vw] mx-auto px-8 md:px-12 relative z-10";
+    const containerClass = "max-w-[1600px] w-[90vw] mx-auto px-6 sm:px-8 md:px-12 relative z-10";
 
     return (
         <>
@@ -44,39 +44,41 @@ export default function Hero() {
             </div>
 
             {/* PILLAR 1: EDUCATION (HERO) */}
-            <section id="education" className={`${containerClass} pt-52 pb-32`}>
-                <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20 mb-52 max-w-[1300px] mx-auto xl:pl-[3%]">
+            <section id="education" className={`${containerClass} pt-20 md:pt-52 pb-20 md:pb-32`}>
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-5 md:gap-12 lg:gap-20 mb-16 md:mb-52 max-w-[1300px] mx-auto xl:pl-[3%]">
                     <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-                        <img src={deviceMain} alt="izon" className="w-full max-w-[500px] lg:max-w-[600px] drop-shadow-[0_40px_100px_rgba(16,185,129,0.2)]" />
+                        <img src={deviceMain} alt="izon" className="w-full max-w-[245px] sm:max-w-[280px] md:max-w-[500px] lg:max-w-[600px] drop-shadow-[0_20px_48px_rgba(16,185,129,0.16)] md:drop-shadow-[0_40px_100px_rgba(16,185,129,0.2)]" />
                     </div>
-                    <div className="w-full lg:w-1/2">
-                        <div className="flex flex-wrap gap-4 mb-10">
-                            <div className="authority-badge">
+                    <div className="w-full lg:w-1/2 max-w-[18.5rem] sm:max-w-[21rem] md:max-w-none">
+                        <div className="flex flex-col items-start gap-2.5 mb-6 md:mb-10">
+                            <div className="authority-badge w-fit px-3 py-1.5 md:px-[14px] md:py-[8px] gap-2 md:gap-[10px] tracking-[0.14em] md:tracking-[0.5em]">
                                 <Globe size={14} className="text-emerald-400" />
-                                <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-100">Korea • Malaysia • Singapore</span>
+                                <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.16em] md:tracking-widest text-emerald-100">Korea • Malaysia • Singapore</span>
                             </div>
-                            <div className="authority-badge">
+                            <div className="authority-badge w-fit px-3 py-1.5 md:px-[14px] md:py-[8px] gap-2 md:gap-[10px] tracking-[0.14em] md:tracking-[0.5em]">
                                 <ShieldCheck size={14} className="text-emerald-400" />
-                                <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-100">MDA Licensed: GB4122123-1</span>
+                                <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.16em] md:tracking-widest text-emerald-100">MDA Licensed: GB4122123-1</span>
                             </div>
                         </div>
-                        <h1 className="text-[4rem] lg:text-[6.5rem] font-[900] leading-[1.1] tracking-tight mb-8 text-white">
-                            让视力，<br className="hidden md:block" />
-                            <span className="text-emerald-400 whitespace-nowrap">真正 U-Turn。</span>
+                        <h1 className="text-[2.7rem] sm:text-[3rem] md:text-[4.75rem] lg:text-[6.5rem] font-[900] leading-[0.94] md:leading-[1.04] tracking-tight mb-5 md:mb-8 text-white">
+                            <span className="block md:inline">让视力，</span>
+                            <span className="block md:inline text-emerald-400 whitespace-nowrap">真正 U-Turn。</span>
                         </h1>
-                        <p className="text-slate-300 text-xl lg:text-2xl max-w-[600px] mb-12 leading-relaxed font-medium">
+                        <p className="text-slate-300 text-[0.95rem] sm:text-[1.03rem] md:text-[1.45rem] lg:text-2xl max-w-[16.5rem] sm:max-w-[18rem] md:max-w-[600px] mb-0 md:mb-12 leading-[1.72] md:leading-relaxed font-medium">
                             试过保健品、药水、防控镜片，度数还是每一年起？<br className="hidden md:block" />
                             别再“治标不治本”了，我们帮你 <span className="text-white font-bold tracking-wider whitespace-nowrap">U-Turn</span> 度数。
                         </p>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-48 pt-16">
-                    <div className="col-span-1 md:col-span-3 mb-8 text-center flex flex-col items-center">
-                        <h3 className="text-4xl md:text-[3.5rem] font-[900] tracking-tighter text-white mb-4">为什么度数一直在起？</h3>
+                <div className="mb-24 md:mb-48 pt-10 md:pt-16">
+                    <div className="mb-8 md:mb-12 text-center flex flex-col items-center">
+                        <h3 className="text-[1.76rem] sm:text-[2rem] md:text-[3.5rem] font-[900] tracking-tighter text-white mb-3 md:mb-4 leading-[1.08]">为什么度数一直在起？</h3>
                         <p className="text-emerald-400 font-[800] tracking-widest uppercase text-lg md:text-xl">因为眼睛的“零件”乱了：</p>
                     </div>
-                    {[
+
+                    {(() => {
+                        const items = [
                         {
                             icon: (
                                 <div className="mb-8 relative w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden bg-[#0A0F14] shadow-[var(--shadow-premium)] group-hover:shadow-[0_20px_40px_rgba(16,185,129,0.1)] transition-all duration-700 flex items-center justify-center isolate">
@@ -164,14 +166,35 @@ export default function Hero() {
                                 </>
                             )
                         }
-                    ].map((item, i) => (
-                        <div key={i} className="group border-t border-white/20 pt-10 flex flex-col items-center text-center">
-                            {item.icon}
-                            <h4 className="text-2xl md:text-[30px] font-[900] uppercase tracking-wide mb-3 text-emerald-500 group-hover:text-emerald-400 transition-colors leading-[1.3]">{item.title}</h4>
-                            <p className="text-base font-bold text-white/50 mb-5">{item.subtitle}</p>
-                            <p className="text-slate-300 text-xl md:text-[22px] leading-[1.8] font-medium">{item.desc}</p>
-                        </div>
-                    ))}
+                        ];
+
+                        return (
+                            <>
+                                <div className="md:hidden -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 no-scrollbar">
+                                    {items.map((item, i) => (
+                                        <div key={i} className="glass-panel w-[82vw] max-w-[20rem] shrink-0 snap-start px-5 py-6 flex flex-col items-center text-center border-white/[0.05] bg-[linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.008))]">
+                                            <div className="[&>div]:mb-5 [&>div]:w-28 [&>div]:h-28">{item.icon}</div>
+                                            <h4 className="text-[1.4rem] font-[900] uppercase tracking-tight mb-2 text-emerald-500 leading-[1.2]">{item.title}</h4>
+                                            <p className="text-[13px] font-bold text-white/50 mb-3">{item.subtitle}</p>
+                                            <p className="text-slate-300 text-[1rem] leading-7 font-medium">{item.desc}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                                <p className="md:hidden mt-3 text-center text-[12px] font-medium tracking-[0.08em] text-slate-500">左右滑动查看更多</p>
+
+                                <div className="hidden md:grid grid-cols-3 gap-12">
+                                    {items.map((item, i) => (
+                                        <div key={i} className="group border-t border-white/20 pt-10 flex flex-col items-center text-center">
+                                            {item.icon}
+                                            <h4 className="text-2xl md:text-[30px] font-[900] uppercase tracking-wide mb-3 text-emerald-500 group-hover:text-emerald-400 transition-colors leading-[1.3]">{item.title}</h4>
+                                            <p className="text-base font-bold text-white/50 mb-5">{item.subtitle}</p>
+                                            <p className="text-slate-300 text-xl md:text-[22px] leading-[1.8] font-medium">{item.desc}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </>
+                        );
+                    })()}
                 </div>
 
                 {/* MODULE A: THE DIVERGENT PATHS */}
