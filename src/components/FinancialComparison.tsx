@@ -47,12 +47,12 @@ export default function FinancialComparison() {
     ];
 
     return (
-        <section className="relative py-16 md:py-20 bg-[#080E1A] overflow-hidden">
+        <section className="relative py-12 md:py-20 bg-[#080E1A] overflow-hidden">
             {/* Ambient Background Light */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none"></div>
 
             <div className="max-w-[1200px] w-[90vw] mx-auto relative z-10">
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-16">
                     <h2 className="text-[2.2rem] md:text-[3rem] font-[900] text-white tracking-tight mb-5">
                         孩子的眼睛，<br className="md:hidden" />
                         <span className="text-emerald-400">你打算花多少钱“试错”？</span>
@@ -63,21 +63,21 @@ export default function FinancialComparison() {
                 </div>
 
                 {/* 3D Frosted Glass Card */}
-                <div className="relative backdrop-blur-[20px] bg-white/[0.02] border border-white/10 rounded-[2rem] p-6 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden mb-16 max-w-[1000px] mx-auto">
+                <div className="relative backdrop-blur-[20px] bg-white/[0.02] border border-white/10 rounded-[2rem] p-4 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden mb-10 md:mb-16 max-w-[1000px] mx-auto">
                     {/* Inner Highlights */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-50 pointer-events-none"></div>
                     <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
 
-                    <div className="flex flex-col space-y-2.5 relative z-10">
+                    <div className="flex flex-col space-y-2 relative z-10">
                         {rows.map((row) => (
                             <div
                                 key={row.id}
-                                className={`flex flex-col md:flex-row items-start md:items-center justify-between p-5 md:p-6 rounded-2xl transition-all ${row.type === 'win'
+                                className={`flex flex-col md:flex-row items-start md:items-center justify-between p-4 md:p-6 rounded-2xl transition-all ${row.type === 'win'
                                     ? 'bg-emerald-500/10 border border-emerald-500/30 shadow-[0_0_30px_rgba(16,185,129,0.15)] mt-4'
                                     : 'bg-white/[0.01] border border-transparent hover:bg-white/[0.03]'
                                     }`}
                             >
-                                <div className="flex items-start gap-5 mb-4 md:mb-0 max-w-[600px] w-full md:w-auto">
+                                <div className="flex items-start gap-4 mb-3 md:mb-0 max-w-[600px] w-full md:w-auto">
                                     <div className={`mt-1 flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full ${row.type === 'win'
                                         ? 'bg-emerald-500/20 text-emerald-400'
                                         : 'bg-rose-500/10 text-rose-400/80'
@@ -85,11 +85,11 @@ export default function FinancialComparison() {
                                         {row.type === 'win' ? <Check size={18} strokeWidth={3} /> : <X size={18} strokeWidth={2.5} />}
                                     </div>
                                     <div className="w-full">
-                                        <h3 className={`font-bold text-xl md:text-2xl mb-2 tracking-wide ${row.type === 'win' ? 'text-emerald-400' : 'text-slate-300'
+                                        <h3 className={`font-bold text-[1.02rem] md:text-2xl mb-1.5 tracking-wide leading-snug ${row.type === 'win' ? 'text-emerald-400' : 'text-slate-300'
                                             }`}>
                                             {row.name}
                                         </h3>
-                                        <p className={`${row.type === 'win' ? 'text-emerald-100/72' : 'text-slate-400'} text-sm md:text-[15px] leading-relaxed mb-3`}>
+                                        <p className={`${row.type === 'win' ? 'text-emerald-100/72' : 'text-slate-400'} text-[13px] md:text-[15px] leading-relaxed mb-2.5`}>
                                             {row.desc}
                                         </p>
                                         {/* Mobile Per Person Label */}
@@ -99,9 +99,9 @@ export default function FinancialComparison() {
                                     </div>
                                 </div>
 
-                                <div className="text-left md:text-right w-full md:w-auto pl-12 md:pl-0 flex flex-col md:items-end flex-shrink-0">
+                                <div className="text-left md:text-right w-full md:w-auto pl-0 md:pl-0 flex flex-col md:items-end flex-shrink-0">
                                     <div className="flex flex-col items-start md:items-end">
-                                        <div className={`font-[900] text-3xl md:text-5xl tracking-tighter flex items-end gap-1 ${row.type === 'win' ? 'text-emerald-400' : 'text-slate-400'
+                                        <div className={`font-[900] text-[2rem] md:text-5xl tracking-tighter flex items-end gap-1 ${row.type === 'win' ? 'text-emerald-400' : 'text-slate-400'
                                             }`}>
                                             <span className={`text-lg mb-1 ${row.type === 'win' ? 'text-emerald-400' : 'text-slate-500'}`}>RM</span>
                                             {row.price}
@@ -127,7 +127,7 @@ export default function FinancialComparison() {
                         {/* Hero breathing glow behind the button */}
                         <div className="absolute inset-0 bg-emerald-500 rounded-full blur-[25px] opacity-50 group-hover:opacity-100 animate-pulse transition-opacity duration-1000"></div>
 
-                        <button className="relative px-12 py-5 bg-emerald-500 text-emerald-950 font-[900] text-xl md:text-2xl tracking-wider rounded-full hover:bg-emerald-400 transition-all shadow-[0_0_40px_rgba(16,185,129,0.3)] flex items-center gap-3">
+                        <button className="relative px-8 py-4 md:px-12 md:py-5 bg-emerald-500 text-emerald-950 font-[900] text-[1.05rem] md:text-2xl tracking-wider rounded-full hover:bg-emerald-400 transition-all shadow-[0_0_40px_rgba(16,185,129,0.3)] flex items-center gap-2.5 md:gap-3">
                             锁定 RM49 线下体验
                             <div className="bg-emerald-900/10 rounded-full p-1 border border-emerald-900/20">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>

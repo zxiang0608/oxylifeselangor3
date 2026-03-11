@@ -39,6 +39,51 @@
 - Keep premium depth subtle: inner glow, edge lighting, dark layering are acceptable when restrained.
 - When a user asks for a stronger layout change, make a clearly visible structural adjustment rather than a micro-polish pass.
 
+## Mobile Interface Rules
+- This page must feel mobile-first, not like desktop squeezed into a phone.
+- Mobile experience should feel obvious, easy to scan, easy to tap, easy to trust, and easy to continue.
+- Do not simply stack or shrink desktop layouts; re-compose sections for mobile.
+- If a mobile section still looks like desktop compressed into a phone, it is not done.
+- Each mobile viewport should communicate one clear idea.
+- Avoid mobile screens with too many equal-weight cards, labels, or paragraphs.
+- Every mobile section should have one clear headline, one short support line, one obvious focal point, and one clear next step.
+- Shorten lower-priority copy on mobile.
+- Remove repeated explanations and repeated labels on mobile.
+- Prefer fewer stronger sections over many medium-strength ones.
+- Do not let body text become tiny on mobile.
+- Avoid dense multi-line paragraphs inside cards on mobile.
+- Avoid orphan or widow line breaks in mobile headlines and key text.
+- Supporting text on mobile must stay functional, not decorative.
+- Never use fixed heights that cut off text.
+- Cards and sections must expand naturally when content wraps.
+- No line should disappear because the layout is too rigid.
+- Too many stacked cards create fatigue on mobile.
+- Reduce unnecessary inner boxes and nested cards on mobile.
+- Prefer fewer, stronger containers on mobile.
+- On mobile, hero, trust/safety, pricing/comparison, and main CTA should stand out most.
+- Supporting sections on mobile should feel lighter and faster.
+- Interactions must be obvious on mobile.
+- Users should never have to guess whether something can be tapped or swiped.
+- If a section is swipeable, show it clearly with cues such as next-card peeking, dots/indicators, or helper text like `左右滑动查看更多`.
+- Do not hide swipeable content with no visual hint.
+- Main proof, pricing, and CTA should not require swiping to discover.
+- Swipeable areas should support the page, not carry the only important content.
+- Nearby CTAs on mobile must not feel duplicate; if two CTAs are close together, they must have different roles.
+- Buttons must be large, stable, and thumb-friendly on mobile.
+- Primary buttons must stand out immediately.
+- Comparison sections on mobile must stay obvious at a glance.
+- Testimonial and expert sections on mobile need shorter quotes, larger faces, and fewer labels.
+- FAQ should use accordions and stay concise on mobile.
+- Footer on mobile should stay compact and useful, prioritizing brand, contact, location, compliance, privacy, and terms.
+- Remove fake prestige or decorative filler from mobile footer layouts.
+- Avoid giant dead gaps between sections on mobile.
+- Avoid excessive padding around small content blocks on mobile.
+- Keep mobile spacing intentional, not floaty.
+- Apply the tired-parent test: can this be understood in a few seconds, is the next step obvious, and does this reduce friction instead of adding reading.
+- If the mobile issue is too much text, too many boxes, tiny copy, awkward wrapping, unclear swipe, repeated CTAs, or desktop layout squeezed into mobile, do not solve it with tiny spacing tweaks only; make a visible structural change.
+- Before calling a mobile section done, confirm: no clipped text, no stray letters, no ugly wraps, swipe is clearly swipeable, CTA is obvious, and the section feels designed for mobile, not just resized.
+- If a user has to pause to figure out `can I swipe this?`, `should I tap this?`, `what does this section mean?`, or `what do I do next?`, the mobile design is not intuitive enough yet.
+
 ## Desired Feel
 - Every section should aim to feel premium, calm, confident, human, credible, high-conversion, and easy to scan.
 - Avoid clutter, over-decoration, badge-wall energy, aggressive app-like UI, and generic template layouts.

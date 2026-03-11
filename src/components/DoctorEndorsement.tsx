@@ -30,13 +30,13 @@ export default function DoctorEndorsement() {
     ];
 
     return (
-        <section className="py-16 md:py-20 relative overflow-hidden">
+        <section className="py-12 md:py-20 relative overflow-hidden">
             {/* Ambient glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-[#142B23] opacity-[0.10] blur-[200px] pointer-events-none"></div>
 
             <div className={containerClass}>
                 {/* Header */}
-                <div className="text-center mb-16 max-w-[900px] mx-auto">
+                <div className="text-center mb-10 md:mb-16 max-w-[900px] mx-auto">
                     <div className="nurture-tag justify-center mx-auto w-fit mb-4">
                         <Stethoscope size={14} className="text-emerald-400" />
                         专业人士评价
@@ -51,7 +51,52 @@ export default function DoctorEndorsement() {
                 </div>
 
                 {/* Doctor Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div className="md:hidden -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 no-scrollbar">
+                    {doctors.map((doctor, index) => (
+                        <div
+                            key={index}
+                            className="glass-panel w-[84vw] max-w-[22rem] shrink-0 snap-start px-5 pb-5 pt-5 flex h-full flex-col relative overflow-hidden border-white/[0.06] bg-[linear-gradient(180deg,rgba(255,255,255,0.025),rgba(255,255,255,0.01))] shadow-[0_16px_36px_rgba(0,0,0,0.16)] transition-all duration-500"
+                        >
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.04),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(15,23,42,0.16),transparent_42%)] pointer-events-none" />
+                            <div className="absolute inset-[1px] rounded-[15px] border border-white/[0.025] pointer-events-none" />
+                            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.12] to-transparent pointer-events-none" />
+
+                            <div className="relative z-10 flex h-full flex-col">
+                                <div className="w-full">
+                                    <div className="flex items-center gap-4">
+                                        <div className="relative h-[5.5rem] w-[5.5rem] shrink-0 overflow-hidden rounded-full border border-white/[0.08] bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.12),transparent_38%),linear-gradient(180deg,rgba(255,255,255,0.08),rgba(15,23,42,0.3))] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+                                            <div className={`absolute inset-0 bg-gradient-to-br ${doctor.accent} opacity-60`} />
+                                            <Image
+                                                src={doctor.image}
+                                                alt={doctor.name}
+                                                fill
+                                                className="object-contain object-center scale-[1.04]"
+                                                sizes="88px"
+                                            />
+                                        </div>
+                                        <div className="min-w-0 flex-1 text-left">
+                                            <p className="text-white font-semibold text-[1.02rem] leading-snug tracking-tight">{doctor.name}</p>
+                                            <p className="mt-1.5 text-slate-400/92 text-[13px] leading-relaxed">{doctor.title}</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="mt-4 border-t border-white/[0.06] pt-3.5">
+                                        <div className="flex items-center gap-2 text-emerald-300/68">
+                                            <Quote size={17} className="shrink-0" />
+                                            <div className="h-px flex-1 bg-gradient-to-r from-emerald-300/18 to-transparent" />
+                                        </div>
+                                        <p className="mt-3 text-slate-200 text-[15px] leading-[1.65rem] font-medium">
+                                            「{doctor.quote}」
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <p className="md:hidden mt-3 text-center text-[12px] font-medium tracking-[0.08em] text-slate-500">左右滑动查看更多</p>
+
+                <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                     {doctors.map((doctor, index) => (
                         <div
                             key={index}

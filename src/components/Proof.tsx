@@ -7,15 +7,15 @@ export default function ProofSection() {
     const containerClass = "max-w-[1600px] w-[90vw] mx-auto px-8 md:px-12 relative z-10";
 
     return (
-        <section id="proof" className="py-16 md:py-20">
+        <section id="proof" className="py-12 md:py-20">
             <div className={containerClass}>
                 {/* TESTIMONIALS (CASE STUDIES) */}
-                <div className="max-w-[1000px] mx-auto text-center mb-12">
+                <div className="max-w-[1000px] mx-auto text-center mb-9 md:mb-12">
                     <div className="nurture-tag text-center w-full justify-center mb-4">用户真实反馈</div>
                     <h2 className="text-[2.2rem] md:text-[3rem] font-[900] tracking-tighter mb-4 text-white">真实见证</h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-left">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 text-left">
                     {[
                         {
                             metrics: [{ label: "近视改善", value: "-125度" }, { label: "散光改善", value: "-75度" }],
@@ -45,14 +45,14 @@ export default function ProofSection() {
                             imagePosition: "center 18%",
                         }
                     ].map((t, i) => (
-                        <div key={i} className="glass-panel p-7 md:p-8 bg-white/[0.02] border border-white/5 hover:border-emerald-500/24 transition-all duration-300 flex flex-col relative overflow-hidden group">
-                            <div className="flex items-center justify-center gap-4 md:gap-5 text-center">
-                                <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-[28px] border border-white/10 bg-slate-900 shadow-[0_18px_30px_rgba(0,0,0,0.28),0_0_0_1px_rgba(255,255,255,0.03)] ring-1 ring-emerald-400/12 md:h-28 md:w-28 md:rounded-[30px]">
+                        <div key={i} className="glass-panel p-5 md:p-8 bg-white/[0.02] border border-white/5 hover:border-emerald-500/24 transition-all duration-300 flex flex-col relative overflow-hidden group">
+                            <div className="flex items-center justify-center gap-3 md:gap-5 text-center">
+                                <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[24px] border border-white/10 bg-slate-900 shadow-[0_18px_30px_rgba(0,0,0,0.28),0_0_0_1px_rgba(255,255,255,0.03)] ring-1 ring-emerald-400/12 md:h-28 md:w-28 md:rounded-[30px]">
                                     <Image
                                         src={t.imageSrc}
                                         alt={t.name}
                                         fill
-                                        sizes="112px"
+                                        sizes="80px"
                                         className="object-cover"
                                         style={{ objectPosition: t.imagePosition }}
                                     />
@@ -60,34 +60,34 @@ export default function ProofSection() {
                                 </div>
 
                                 <div className="min-w-0 pt-1 flex flex-col items-center">
-                                    <div className="text-[1.18rem] md:text-[1.24rem] font-semibold tracking-tight text-white">{t.name}</div>
+                                    <div className="text-[1.08rem] md:text-[1.24rem] font-semibold tracking-tight text-white">{t.name}</div>
                                     <div className="mt-1 text-[11px] md:text-[12px] text-slate-400 leading-relaxed">{t.bio}</div>
-                                    <div className="mt-3 inline-flex w-fit items-center gap-1.5 text-[10px] font-medium tracking-[0.08em] text-emerald-200/82">
+                                    <div className="mt-2 inline-flex w-fit items-center gap-1.5 text-[10px] font-medium tracking-[0.08em] text-emerald-200/82">
                                         <span className="text-emerald-300/90">•</span>
                                         已验证反馈
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="relative mt-6 flex flex-1 flex-col">
+                            <div className="relative mt-4 md:mt-6 flex flex-1 flex-col">
                                 <div className="px-1 pt-1">
-                                    <div className="mb-4 h-px w-full bg-gradient-to-r from-white/0 via-white/8 to-white/0" />
-                                    <p className="text-slate-200 text-[15px] md:text-[16px] leading-7 italic">
+                                    <div className="mb-3 h-px w-full bg-gradient-to-r from-white/0 via-white/8 to-white/0" />
+                                    <p className="text-slate-200 text-[14.5px] md:text-[16px] leading-6 md:leading-7 italic">
                                         {t.quote}
                                     </p>
                                 </div>
 
-                                <div className="mt-6 rounded-[24px] border border-emerald-500/10 bg-gradient-to-br from-emerald-900/40 to-emerald-950/20 p-6 transition-colors group-hover:border-emerald-500/20">
-                                    <div className={`flex ${t.metrics.length > 1 ? 'justify-center' : 'justify-center'} items-end gap-6 md:gap-8 mb-4 w-fit mx-auto`}>
+                                <div className="mt-5 rounded-[22px] border border-emerald-500/10 bg-gradient-to-br from-emerald-900/40 to-emerald-950/20 p-4 md:p-6 transition-colors group-hover:border-emerald-500/20">
+                                    <div className={`flex ${t.metrics.length > 1 ? 'justify-center' : 'justify-center'} items-end gap-4 md:gap-8 mb-3 w-fit mx-auto`}>
                                         {t.metrics.map((m, idx) => (
                                             <div key={idx} className="text-center">
-                                                <div className="text-3xl md:text-4xl font-[900] text-emerald-400 tracking-tighter leading-none mb-1">{m.value}</div>
+                                                <div className="text-[1.7rem] md:text-4xl font-[900] text-emerald-400 tracking-tighter leading-none mb-1">{m.value}</div>
                                                 <div className="text-[11px] font-bold text-emerald-500/80 uppercase tracking-widest">{m.label}</div>
                                             </div>
                                         ))}
                                     </div>
-                                    <div className="flex justify-center -mb-9 relative z-10">
-                                        <span className="text-[10px] font-bold tracking-widest text-[#020617] bg-emerald-400 px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.24)]">
+                                    <div className="flex justify-center -mb-7 md:-mb-9 relative z-10">
+                                        <span className="text-[10px] font-bold tracking-[0.12em] text-[#020617] bg-emerald-400 px-3.5 py-1.5 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.24)]">
                                             {t.duration}
                                         </span>
                                     </div>

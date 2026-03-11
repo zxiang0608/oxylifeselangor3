@@ -247,6 +247,15 @@
     box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
   }
 
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   /* HUD Elements */
   .hud-marker {
     position: fixed;

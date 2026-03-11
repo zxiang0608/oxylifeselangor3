@@ -4,16 +4,16 @@ import Image from 'next/image';
 export default function Footer() {
     return (
         <footer className="border-t border-white/5 bg-[#01040a] relative z-20">
-            <div className="max-w-[1180px] w-[90vw] mx-auto px-8 md:px-10 py-10 md:py-11">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 items-start justify-items-center md:pl-[5%]">
-                    <div className="w-full max-w-[20rem]">
-                        <div className="mb-2">
-                            <div className="relative w-[13rem] h-[13rem] overflow-hidden flex items-center justify-center -ml-3">
+            <div className="max-w-[1180px] w-[90vw] mx-auto px-6 md:px-10 py-8 md:py-11">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start justify-items-start md:justify-items-center md:pl-[5%]">
+                    <div className="w-full max-w-[20rem] flex justify-center md:justify-start">
+                        <div className="mb-1">
+                            <div className="relative w-[7.5rem] h-[7.5rem] md:w-[13rem] md:h-[13rem] overflow-hidden flex items-center justify-center md:-ml-3">
                                 <Image
                                     src="/images/oxylife-logo-new.png"
                                     alt="Oxylife"
                                     fill
-                                    sizes="208px"
+                                    sizes="(min-width: 768px) 208px, 120px"
                                     className="object-contain"
                                 />
                             </div>

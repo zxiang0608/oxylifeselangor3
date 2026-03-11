@@ -61,27 +61,27 @@ export default function ProofFaq() {
     ];
 
     return (
-        <section className="py-16 md:py-20 relative">
+        <section className="py-12 md:py-20 relative">
             <div className={containerClass}>
                 {/* FAQ */}
-                <div className="max-w-[1000px] mx-auto mb-32">
-                    <div className="text-center mb-10">
+                <div className="max-w-[1000px] mx-auto">
+                    <div className="text-center mb-8 md:mb-10">
                         <h2 className="text-[2.2rem] md:text-[3rem] font-[900] tracking-tight text-white">常见问题</h2>
                     </div>
 
-                    <div className="space-y-4">
+                    <div className="space-y-3 md:space-y-4">
                         {faqs.map((faq, i) => (
                             <div key={i} className="glass-panel overflow-hidden border-white/6 hover:border-emerald-500/18 transition-colors duration-300">
                                 <button
-                                    className="w-full px-6 py-5 md:px-8 md:py-6 flex justify-between items-start gap-6 text-left bg-transparent border-none cursor-pointer focus:outline-none"
+                                    className="w-full px-5 py-4 md:px-8 md:py-6 flex justify-between items-start gap-5 md:gap-6 text-left bg-transparent border-none cursor-pointer focus:outline-none"
                                     onClick={() => setActiveFaq(activeFaq === i ? null : i)}
                                 >
-                                    <span className="text-[1.02rem] md:text-[1.14rem] font-semibold tracking-tight text-white leading-[1.35] pr-4">{faq.q}</span>
+                                    <span className="text-[0.98rem] md:text-[1.14rem] font-semibold tracking-tight text-white leading-[1.35] pr-3 md:pr-4">{faq.q}</span>
                                     {activeFaq === i ? <ChevronUp size={20} className="text-emerald-400 shrink-0 mt-0.5" /> : <ChevronDown size={20} className="text-slate-500 shrink-0 mt-0.5" />}
                                 </button>
                                 {activeFaq === i && (
-                                    <div className="px-6 pb-6 md:px-8 md:pb-7 text-slate-300 text-[15px] md:text-[16px] leading-7 font-medium animate-in fade-in slide-in-from-top-1 duration-300 border-t border-white/6">
-                                        <div className="pt-4 space-y-3">
+                                    <div className="px-5 pb-5 md:px-8 md:pb-7 text-slate-300 text-[14px] md:text-[16px] leading-[1.65rem] md:leading-7 font-medium animate-in fade-in slide-in-from-top-1 duration-300 border-t border-white/6">
+                                        <div className="pt-4 space-y-2.5 md:space-y-3">
                                             {faq.a.map((paragraph, idx) => (
                                                 <p key={idx}>{paragraph}</p>
                                             ))}

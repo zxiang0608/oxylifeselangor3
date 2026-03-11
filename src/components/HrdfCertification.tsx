@@ -27,7 +27,7 @@ export default function HrdfCertification() {
     ];
 
     return (
-        <section className="py-16 md:py-20 relative overflow-hidden bg-[#080E1A]">
+        <section className="py-12 md:py-20 relative overflow-hidden bg-[#080E1A]">
 
             {/* God Rays / Tyndall light effect */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -44,12 +44,12 @@ export default function HrdfCertification() {
             </div>
 
             <div className={containerClass}>
-                <div className="max-w-[1560px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-6 items-center">
+                <div className="max-w-[1560px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-6 items-center">
 
                     {/* LEFT — Safety Copy */}
-                    <div className="relative p-2 md:p-3 flex justify-center">
+                    <div className="relative p-1 md:p-3 flex justify-center">
                         <div className="relative z-10 max-w-[36rem] mx-auto text-center">
-                            <div className="nurture-tag w-fit mb-6 mx-auto">
+                            <div className="nurture-tag w-fit mb-5 md:mb-6 mx-auto">
                                 <ShieldCheck size={14} className="text-emerald-400" />
                                 安全与合规
                             </div>
@@ -59,12 +59,12 @@ export default function HrdfCertification() {
                                 <span className="block whitespace-nowrap">安全我们不敢马虎。</span>
                             </h2>
 
-                            <p className="text-slate-400 text-[18px] md:text-[19.5px] leading-relaxed font-medium mb-7 w-fit min-w-[24.5ch] md:min-w-[26ch] mx-auto">
+                            <p className="text-slate-400 text-[16px] md:text-[19.5px] leading-relaxed font-medium mb-5 md:mb-7 w-fit min-w-[24.5ch] md:min-w-[26ch] mx-auto">
                                 <span className="block whitespace-nowrap">每天都要接触孩子的眼睛与用眼习惯，</span>
                                 <span className="block whitespace-nowrap">安全、合规、可查询，比什么都重要。</span>
                             </p>
 
-                            <div className="space-y-3.5 md:space-y-4 max-w-[25rem] mx-auto md:pl-6 text-left">
+                            <div className="space-y-3 md:space-y-4 max-w-[25rem] mx-auto md:pl-6 text-left">
                                 {checks.map((check, i) => (
                                     <div key={i} className="flex items-start gap-3.5 text-left">
                                         <CheckCircle2
@@ -82,14 +82,14 @@ export default function HrdfCertification() {
                     </div>
 
                     {/* CENTER — MDA Mark */}
-                    <div className="relative flex items-center justify-center overflow-hidden p-2 md:p-3">
+                    <div className="relative flex items-center justify-center overflow-hidden p-1 md:p-3">
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.05),transparent_62%)] blur-[28px] pointer-events-none" />
-                        <div className="relative w-full max-w-[26rem] h-full min-h-[28rem] md:min-h-[31rem]">
+                        <div className="relative w-full max-w-[13rem] md:max-w-[26rem] h-full min-h-[16rem] md:min-h-[31rem]">
                             <Image
                                 src="/images/mda.png"
                                 alt="MDA"
                                 fill
-                                sizes="(min-width: 1024px) 26rem, 100vw"
+                                sizes="(min-width: 1024px) 26rem, 13rem"
                                 className="object-contain object-center drop-shadow-[0_18px_48px_rgba(0,0,0,0.22)]"
                             />
                         </div>
@@ -99,16 +99,16 @@ export default function HrdfCertification() {
                     <div className="relative flex justify-center">
                         <div className="absolute inset-0 bg-emerald-500/[0.035] blur-[72px] rounded-[32px] scale-110 pointer-events-none" />
 
-                        <div className="relative glass-panel p-8 md:p-9 border-white/[0.08] transition-colors duration-500 text-left mx-auto">
+                        <div className="relative glass-panel p-5 md:p-9 border-white/[0.08] transition-colors duration-500 text-left mx-auto">
                             <div className="w-full max-w-[27rem] mx-auto">
-                                <p className="text-slate-500 text-[11px] font-semibold tracking-[0.18em] uppercase mb-7 text-center">注册与合规信息</p>
+                                <p className="text-slate-500 text-[11px] font-semibold tracking-[0.18em] uppercase mb-5 md:mb-7 text-center">注册与合规信息</p>
 
-                                <div className="mb-8 text-center">
+                                <div className="mb-6 md:mb-8 text-center">
                                     <p className="text-slate-400 text-[12px] font-semibold tracking-[0.16em] uppercase mb-2">MDA 注册号</p>
-                                    <p className="text-white text-[2.6rem] md:text-[3.45rem] font-[900] tracking-tight leading-none">
+                                    <p className="text-white text-[2rem] md:text-[3.45rem] font-[900] tracking-tight leading-none">
                                     GA1448221-77276
                                     </p>
-                                    <p className="mt-4 text-slate-500 text-[13px] md:text-[14px] leading-relaxed font-medium max-w-[22rem] mx-auto">
+                                    <p className="mt-3 md:mt-4 text-slate-500 text-[12px] md:text-[14px] leading-relaxed font-medium max-w-[22rem] mx-auto">
                                         可于马来西亚 MMDR / MDA 系统查询
                                     </p>
                                 </div>
