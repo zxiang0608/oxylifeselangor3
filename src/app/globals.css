@@ -156,6 +156,19 @@
   z-index: 0;
 }
 
+@keyframes swipe-nudge {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+.swipe-nudge {
+  animation: swipe-nudge 1.6s ease-in-out infinite;
+}
+
 @layer components {
   .glass-panel {
     background: rgba(255, 255, 255, 0.03);

@@ -1,10 +1,7 @@
-"use client";
-
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import React from 'react';
+import { ChevronDown } from 'lucide-react';
 
 export default function ProofFaq() {
-    const [activeFaq, setActiveFaq] = useState<number | null>(null);
     const containerClass = "max-w-[1600px] w-[90vw] mx-auto px-8 md:px-12 relative z-10";
     const faqs = [
         {
@@ -18,14 +15,15 @@ export default function ProofFaq() {
         {
             q: "RM49 体验包含什么？",
             a: [
-                "RM49 包含一次基础视力评估、约 40 分钟体验，以及现场答疑",
-                "如果是在合作眼镜店进行，会先做视力检查；如果是上门体验，或附近没有合作眼镜店，则会先做基础视力测试",
-                "体验后，一般可现场看到初步变化，我们也会说明适不适合你或孩子开始",
-                "不会强制购买，重点是先体验、先看懂，再决定",
+                "RM49 包含一次基础视力评估、约 40 分钟体验，以及现场答疑。",
+                "在合作眼镜店体验时，会先做视力检查；如选择上门体验，或附近没有合作眼镜店，则会安排基础视力测试。",
+                "体验后，通常可以现场看到初步变化，我们也会判断你或孩子是否适合开始。",
+                "先体验、看效果，再决定。",
             ],
         },
         {
             q: "每天需要做多久？会不会很麻烦？",
+            mobileLines: ["每天需要做多久？", "会不会很麻烦？"],
             a: [
                 "不会很麻烦，时间比很多家长想象中短",
                 "一般治疗阶段，每次约 10–15 分钟，一天 3 次；做到对变化满意后，可以慢慢减少",
@@ -63,7 +61,6 @@ export default function ProofFaq() {
     return (
         <section className="py-12 md:py-20 relative">
             <div className={containerClass}>
-                {/* FAQ */}
                 <div className="max-w-[1000px] mx-auto">
                     <div className="text-center mb-8 md:mb-10">
                         <h2 className="text-[2.2rem] md:text-[3rem] font-[900] tracking-tight text-white">常见问题</h2>
@@ -71,28 +68,32 @@ export default function ProofFaq() {
 
                     <div className="space-y-3 md:space-y-4">
                         {faqs.map((faq, i) => (
-                            <div key={i} className="glass-panel overflow-hidden border-white/6 hover:border-emerald-500/18 transition-colors duration-300">
-                                <button
-                                    className="w-full px-5 py-4 md:px-8 md:py-6 flex justify-between items-start gap-5 md:gap-6 text-left bg-transparent border-none cursor-pointer focus:outline-none"
-                                    onClick={() => setActiveFaq(activeFaq === i ? null : i)}
-                                >
-                                    <span className="text-[0.98rem] md:text-[1.14rem] font-semibold tracking-tight text-white leading-[1.35] pr-3 md:pr-4">{faq.q}</span>
-                                    {activeFaq === i ? <ChevronUp size={20} className="text-emerald-400 shrink-0 mt-0.5" /> : <ChevronDown size={20} className="text-slate-500 shrink-0 mt-0.5" />}
-                                </button>
-                                {activeFaq === i && (
-                                    <div className="px-5 pb-5 md:px-8 md:pb-7 text-slate-300 text-[14px] md:text-[16px] leading-[1.65rem] md:leading-7 font-medium animate-in fade-in slide-in-from-top-1 duration-300 border-t border-white/6">
-                                        <div className="pt-4 space-y-2.5 md:space-y-3">
-                                            {faq.a.map((paragraph, idx) => (
-                                                <p key={idx}>{paragraph}</p>
-                                            ))}
-                                        </div>
+                            <details key={i} className="group glass-panel overflow-hidden border-white/6 hover:border-emerald-500/18 transition-colors duration-300">
+                                <summary className="list-none w-full px-5 py-4 md:px-8 md:py-6 flex justify-between items-start gap-5 md:gap-6 text-left cursor-pointer">
+                                    <span className="text-[0.95rem] md:text-[1.14rem] font-semibold tracking-tight text-white leading-[1.35] pr-2 md:pr-4">
+                                        {'mobileLines' in faq && faq.mobileLines ? (
+                                            <>
+                                                <span className="block md:hidden whitespace-nowrap">{faq.mobileLines[0]}</span>
+                                                <span className="block md:hidden whitespace-nowrap">{faq.mobileLines[1]}</span>
+                                                <span className="hidden md:inline">{faq.q}</span>
+                                            </>
+                                        ) : (
+                                            faq.q
+                                        )}
+                                    </span>
+                                    <ChevronDown size={20} className="text-slate-500 shrink-0 mt-0.5 transition-transform duration-300 group-open:rotate-180 group-open:text-emerald-400" />
+                                </summary>
+                                <div className="px-5 pb-5 md:px-8 md:pb-7 text-slate-300 text-[14px] md:text-[16px] leading-[1.65rem] md:leading-7 font-medium border-t border-white/6">
+                                    <div className="pt-4 space-y-2.5 md:space-y-3">
+                                        {faq.a.map((paragraph, idx) => (
+                                            <p key={idx}>{paragraph}</p>
+                                        ))}
                                     </div>
-                                )}
-                            </div>
+                                </div>
+                            </details>
                         ))}
                     </div>
                 </div>
-
             </div>
         </section>
     );

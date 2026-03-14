@@ -1,36 +1,34 @@
 import React from 'react';
-import { X, Check } from 'lucide-react';
-
 export default function FinancialComparison() {
     const rows = [
         {
             id: 1,
-            name: "放任不管 (频繁换镜方案)",
-            desc: "[10年内持续换镜 + 度数管理风险累积 + 成年后可能面对更高干预成本]",
+            name: "放任不管（频繁换镜）",
+            desc: "10年内持续换镜 + 度数管理风险累积 + 成年后可能面对更高干预成本",
             price: "15,000+",
             type: "loss",
             perPersonLabel: "（长期被动消耗）"
         },
         {
             id: 2,
-            name: "特制防控镜片 (10年计划)",
-            desc: "[发育期通常需要多次更换镜片，长期投入持续累积]",
+            name: "防控镜片（10年计划）",
+            desc: "发育期通常需要多次更换镜片，长期投入持续累积",
             price: "15,000",
             type: "loss",
             perPersonLabel: "（按人头持续投入）"
         },
         {
             id: 3,
-            name: "OK镜 / 隐形眼镜 (5年消耗)",
-            desc: "[镜片损耗与更换风险存在，护理液等后续支出也会持续累积]",
+            name: "OK镜 / 隐形眼镜（5年）",
+            desc: "镜片损耗与更换风险存在，护理液等后续支出也会持续累积",
             price: "12,000",
             type: "loss",
             perPersonLabel: "（后续维护支出持续）"
         },
         {
             id: 4,
-            name: "视力保健补给品 (5年量)",
-            desc: "[每月持续补充叶黄素、营养品，花费不断累积，变化却未必看得见]",
+            name: "视力保健品（5年）",
+            desc: "每月持续补充叶黄素、营养品，花费不断累积，变化却未必明显",
             price: "9,000",
             type: "loss",
             perPersonLabel: "（长期日常支出）"
@@ -38,10 +36,10 @@ export default function FinancialComparison() {
         {
             id: 5,
             name: "IZON 视力自愈方案",
-            desc: "[今日首诊：40分钟专家1对1指导 + 深度视力评估]",
+            desc: "今日首诊：40分钟专家1对1指导 + 深度评估",
             price: "49",
             type: "win",
-            perPersonLabel: "今日体验价",
+            perPersonLabel: "体验价",
             remark: "可一次买断，全家共享"
         }
     ];
@@ -68,53 +66,49 @@ export default function FinancialComparison() {
                     <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-50 pointer-events-none"></div>
                     <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
 
-                    <div className="flex flex-col space-y-2 relative z-10">
+                    <div className="flex flex-col space-y-2.5 relative z-10">
                         {rows.map((row) => (
                             <div
                                 key={row.id}
                                 className={`flex flex-col md:flex-row items-start md:items-center justify-between p-4 md:p-6 rounded-2xl transition-all ${row.type === 'win'
                                     ? 'bg-emerald-500/10 border border-emerald-500/30 shadow-[0_0_30px_rgba(16,185,129,0.15)] mt-4'
-                                    : 'bg-white/[0.01] border border-transparent hover:bg-white/[0.03]'
+                                    : 'bg-white/[0.01] border border-white/[0.03] hover:bg-white/[0.025]'
                                     }`}
                             >
-                                <div className="flex items-start gap-4 mb-3 md:mb-0 max-w-[600px] w-full md:w-auto">
-                                    <div className={`mt-1 flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full ${row.type === 'win'
-                                        ? 'bg-emerald-500/20 text-emerald-400'
-                                        : 'bg-rose-500/10 text-rose-400/80'
-                                        }`}>
-                                        {row.type === 'win' ? <Check size={18} strokeWidth={3} /> : <X size={18} strokeWidth={2.5} />}
-                                    </div>
-                                    <div className="w-full">
-                                        <h3 className={`font-bold text-[1.02rem] md:text-2xl mb-1.5 tracking-wide leading-snug ${row.type === 'win' ? 'text-emerald-400' : 'text-slate-300'
-                                            }`}>
-                                            {row.name}
-                                        </h3>
-                                        <p className={`${row.type === 'win' ? 'text-emerald-100/72' : 'text-slate-400'} text-[13px] md:text-[15px] leading-relaxed mb-2.5`}>
-                                            {row.desc}
-                                        </p>
-                                        {/* Mobile Per Person Label */}
-                                        <div className={`md:hidden inline-block px-3 py-1 rounded-full text-[10px] font-bold tracking-wider ${row.type === 'win' ? 'bg-emerald-500/20 text-emerald-300' : 'bg-slate-800 text-slate-300'}`}>
-                                            {row.perPersonLabel}
+                                <div className="grid w-full grid-cols-[minmax(0,1fr)_7.8rem] gap-x-3 gap-y-3 md:grid-cols-[minmax(0,1fr)_12.5rem] md:items-center">
+                                    <div className="min-w-0 pr-1 md:pr-3">
+                                        <div className="min-w-0 max-w-[15.25rem] md:max-w-none">
+                                            <h3 className={`font-bold ${row.type === 'win' ? 'text-[1.02rem] md:text-2xl text-emerald-400' : 'text-[1rem] md:text-[1.55rem] text-slate-200'} mb-1.5 tracking-wide leading-snug`}>
+                                                {row.name}
+                                            </h3>
+                                            <p className={`${row.type === 'win' ? 'text-emerald-100/72' : 'text-slate-300/92'} text-[13.5px] md:text-[15px] leading-[1.58] max-w-[23ch] md:max-w-[38ch]`}>
+                                                {row.desc}
+                                            </p>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div className="text-left md:text-right w-full md:w-auto pl-0 md:pl-0 flex flex-col md:items-end flex-shrink-0">
-                                    <div className="flex flex-col items-start md:items-end">
-                                        <div className={`font-[900] text-[2rem] md:text-5xl tracking-tighter flex items-end gap-1 ${row.type === 'win' ? 'text-emerald-400' : 'text-slate-400'
-                                            }`}>
-                                            <span className={`text-lg mb-1 ${row.type === 'win' ? 'text-emerald-400' : 'text-slate-500'}`}>RM</span>
+                                    <div className={`w-[7.8rem] md:w-[12.5rem] flex flex-col justify-center self-center rounded-[18px] bg-white/[0.02] px-3.5 py-3 text-center md:self-center md:border-l md:border-white/[0.05] md:rounded-none md:bg-transparent md:px-0 md:py-0 md:pl-7 md:items-end md:text-right`}>
+                                        <div className={`font-[900] text-[1.16rem] md:text-[3.2rem] tracking-tighter flex items-end justify-center md:justify-end gap-1 ${row.type === 'win' ? 'text-emerald-400' : 'text-slate-300'}`}>
+                                            <span className={`text-[10px] md:text-lg mb-1 ${row.type === 'win' ? 'text-emerald-400' : 'text-slate-500'}`}>RM</span>
                                             {row.price}
                                         </div>
-                                        <div className={`mt-1 text-[11px] sm:text-xs font-bold tracking-wider ${row.type === 'win' ? 'text-emerald-300' : 'text-slate-400'}`}>
-                                            {row.perPersonLabel}
-                                        </div>
-                                        {row.remark && (
-                                            <div className="mt-2.5 text-emerald-100/78 text-[11px] md:text-[12px] leading-tight max-w-[200px] md:text-right font-medium">
+                                        {row.type === 'win' && (
+                                            <div className="mt-1 text-[11px] sm:text-xs font-bold tracking-wider text-emerald-300 text-center md:text-right">
+                                                {row.perPersonLabel}
+                                            </div>
+                                        )}
+                                        {row.type === 'win' && row.remark && (
+                                            <div className="hidden md:block mt-2.5 text-emerald-100/78 text-[11px] md:text-[12px] leading-tight max-w-[200px] text-right font-medium">
                                                 {row.remark}
                                             </div>
                                         )}
                                     </div>
+
+                                    {row.type === 'win' && row.remark && (
+                                        <div className="col-span-2 pt-0.5 text-center text-emerald-100/78 text-[11px] md:text-[12px] leading-tight font-medium md:hidden">
+                                            {row.remark}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         ))}

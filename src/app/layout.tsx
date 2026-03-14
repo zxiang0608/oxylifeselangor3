@@ -7,9 +7,55 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
 });
 
+const getSiteUrl = () => {
+  const rawUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    process.env.VERCEL_PROJECT_PRODUCTION_URL ||
+    process.env.VERCEL_URL ||
+    "http://localhost:3000";
+
+  return new URL(rawUrl.startsWith("http") ? rawUrl : `https://${rawUrl}`);
+};
+
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
-  title: "IZON Medical | Biological Recalibration",
-  description: "Myopia is a physical ocular stretch. We target the biological cause through refractive matrix calibration.",
+  metadataBase: siteUrl,
+  title: {
+    default: "Oxylife Selangor | 儿童与家庭视力训练方案",
+    template: "%s | Oxylife Selangor",
+  },
+  description:
+    "Oxylife Selangor 提供儿童与家庭视力训练方案，帮助评估是否适合开始、减轻用眼负担，并比较长期效果、安全性、孩子配合度与整体费用。",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "Oxylife Selangor",
+    locale: "zh_CN",
+    title: "Oxylife Selangor | 儿童与家庭视力训练方案",
+    description:
+      "帮助家长先判断孩子是否适合开始，再比较长期效果、安全性、孩子配合度与整体费用。",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Oxylife Selangor | 儿童与家庭视力训练方案",
+    description:
+      "帮助家长先判断孩子是否适合开始，再比较长期效果、安全性、孩子配合度与整体费用。",
+  },
 };
 
 export default function RootLayout({
@@ -18,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="zh-Hans" className="scroll-smooth">
       <body
         className={`${plusJakartaSans.variable} font-sans antialiased`}
       >
