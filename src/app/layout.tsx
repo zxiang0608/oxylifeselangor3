@@ -22,8 +22,13 @@ const siteUrl = getSiteUrl();
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: {
-    default: "Oxylife Selangor | 儿童与家庭视力训练方案",
-    template: "%s | Oxylife Selangor",
+    default: "Oxylife | Eye Treatment at Home",
+    template: "%s | Oxylife | Eye Treatment at Home",
+  },
+  icons: {
+    icon: "/images/oxylife-logo-new.png",
+    shortcut: "/images/oxylife-logo-new.png",
+    apple: "/images/oxylife-logo-new.png",
   },
   description:
     "Oxylife Selangor 提供儿童与家庭视力训练方案，帮助评估是否适合开始、减轻用眼负担，并比较长期效果、安全性、孩子配合度与整体费用。",
@@ -44,15 +49,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    siteName: "Oxylife Selangor",
+    siteName: "Oxylife | Eye Treatment at Home",
     locale: "zh_CN",
-    title: "Oxylife Selangor | 儿童与家庭视力训练方案",
+    title: "Oxylife | Eye Treatment at Home",
     description:
       "帮助家长先判断孩子是否适合开始，再比较长期效果、安全性、孩子配合度与整体费用。",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oxylife Selangor | 儿童与家庭视力训练方案",
+    title: "Oxylife | Eye Treatment at Home",
     description:
       "帮助家长先判断孩子是否适合开始，再比较长期效果、安全性、孩子配合度与整体费用。",
   },

@@ -1,5 +1,13 @@
 import React from 'react';
-export default function FinancialComparison() {
+type FinancialComparisonProps = {
+    trialLabel?: string;
+    trialHref?: string;
+};
+
+export default function FinancialComparison({
+    trialLabel = '锁定 RM49 线下体验',
+    trialHref = '#enrollment',
+}: FinancialComparisonProps) {
     const rows = [
         {
             id: 1,
@@ -116,17 +124,22 @@ export default function FinancialComparison() {
                 </div>
 
                 {/* Final RM49 Button - Breathing Glow */}
-                <div className="flex justify-center relative z-20">
-                    <a href="#enrollment" className="relative group inline-block">
+                <div id="comparison-cta" data-cta-zone="true" className="flex justify-center relative z-20">
+                    <a
+                        href={trialHref}
+                        target={trialHref.startsWith('http') ? '_blank' : undefined}
+                        rel={trialHref.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className="relative group inline-block no-underline"
+                    >
                         {/* Hero breathing glow behind the button */}
                         <div className="absolute inset-0 bg-emerald-500 rounded-full blur-[25px] opacity-50 group-hover:opacity-100 animate-pulse transition-opacity duration-1000"></div>
 
-                        <button className="relative px-8 py-4 md:px-12 md:py-5 bg-emerald-500 text-emerald-950 font-[900] text-[1.05rem] md:text-2xl tracking-wider rounded-full hover:bg-emerald-400 transition-all shadow-[0_0_40px_rgba(16,185,129,0.3)] flex items-center gap-2.5 md:gap-3">
-                            锁定 RM49 线下体验
+                        <span className="relative whitespace-nowrap px-8 py-4 md:px-12 md:py-5 bg-emerald-500 text-emerald-950 font-[900] text-[0.98rem] md:text-2xl tracking-[0.06em] md:tracking-wider rounded-full hover:bg-emerald-400 transition-all shadow-[0_0_40px_rgba(16,185,129,0.3)] flex items-center gap-2.5 md:gap-3">
+                            {trialLabel}
                             <div className="bg-emerald-900/10 rounded-full p-1 border border-emerald-900/20">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
                             </div>
-                        </button>
+                        </span>
                     </a>
                 </div>
             </div>
