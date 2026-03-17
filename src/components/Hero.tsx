@@ -229,11 +229,24 @@ export default function Hero() {
                 <div id="comparison" className="pt-4 md:pt-[90px] pb-[96px] md:pb-32 mb-8 md:mb-10">
                     <div className="max-w-[800px] mx-auto text-center mb-5 md:mb-14 px-4 md:px-8">
                         <h2 className="mb-4 text-white/95 leading-[1.18]">
-                            <span className="block mx-auto max-w-[20.8rem] text-[1.52rem] md:max-w-none md:text-3xl lg:text-[2.7rem] font-[760] tracking-tight whitespace-nowrap">
-                                5年后，孩子的镜片越来越厚，
+                            <span className="mx-auto flex max-w-[18.9rem] flex-col items-center md:hidden">
+                                <span className="block w-[15.6rem] text-center text-[1.62rem] font-[860] tracking-tight">
+                                    5年后，孩子的镜片
+                                </span>
+                                <span className="mt-1 block w-[11.2rem] text-center text-[1.62rem] font-[860] tracking-tight">
+                                    越来越厚，
+                                </span>
+                                <span className="mt-1.5 block w-[18.4rem] text-center text-[1.72rem] font-[900] tracking-tight">
+                                    还是度数终于稳住了？
+                                </span>
                             </span>
-                            <span className="mt-1 block mx-auto max-w-[20.8rem] text-[1.68rem] md:max-w-none md:text-[2.15rem] lg:text-[3rem] font-[900] tracking-tight whitespace-nowrap">
-                                还是度数终于稳住了？
+                            <span className="hidden md:block">
+                                <span className="block mx-auto max-w-[20.8rem] text-[1.52rem] md:max-w-none md:text-3xl lg:text-[2.7rem] font-[760] tracking-tight whitespace-nowrap">
+                                    5年后，孩子的镜片越来越厚，
+                                </span>
+                                <span className="mt-1 block mx-auto max-w-[20.8rem] text-[1.68rem] md:max-w-none md:text-[2.15rem] lg:text-[3rem] font-[900] tracking-tight whitespace-nowrap">
+                                    还是度数终于稳住了？
+                                </span>
                             </span>
                         </h2>
                         <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-white/12 to-transparent"></div>
@@ -414,11 +427,24 @@ export default function Hero() {
                             方案对比
                         </div>
                         <h2 className="text-slate-100 text-center leading-[1.12] mb-4 md:mb-6">
-                            <span className="block mx-auto w-fit text-[2rem] md:text-3xl lg:text-4xl font-[800] tracking-[0.01em] whitespace-nowrap">
-                                同样是花钱，哪一种方式
+                            <span className="mx-auto flex max-w-[18.2rem] flex-col items-center md:hidden">
+                                <span className="block w-[12.6rem] text-center text-[1.84rem] font-[820] tracking-[0.01em]">
+                                    同样是花钱
+                                </span>
+                                <span className="mt-1 block w-[14.4rem] text-center text-[1.84rem] font-[900] tracking-[0.01em]">
+                                    哪一种更值得
+                                </span>
+                                <span className="mt-1 block w-[10.2rem] text-center text-[1.84rem] font-[900] tracking-[0.01em]">
+                                    长期选择？
+                                </span>
                             </span>
-                            <span className="mt-1 block mx-auto w-fit text-[2rem] md:text-3xl lg:text-4xl font-[900] tracking-[0.01em] whitespace-nowrap">
-                                更值得长期选择？
+                            <span className="hidden md:block">
+                                <span className="block mx-auto w-fit text-[2rem] md:text-3xl lg:text-4xl font-[800] tracking-[0.01em] whitespace-nowrap">
+                                    同样是花钱，哪一种方式
+                                </span>
+                                <span className="mt-1 block mx-auto w-fit text-[2rem] md:text-3xl lg:text-4xl font-[900] tracking-[0.01em] whitespace-nowrap">
+                                    更值得长期选择？
+                                </span>
                             </span>
                         </h2>
                         <p className="text-slate-400 font-medium max-w-[21.75rem] md:max-w-[700px] mx-auto text-[1.03rem] md:text-lg text-center leading-[1.58]">

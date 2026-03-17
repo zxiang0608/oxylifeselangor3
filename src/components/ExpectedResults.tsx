@@ -27,9 +27,18 @@ export default function ExpectedResults() {
                 <div>
                     <div className="mx-auto mb-5 md:mb-7 max-w-[1320px] flex flex-col items-center text-center">
                         <div className="nurture-tag mx-auto w-fit text-sm md:text-base px-4 py-1.5">真实世界的改变</div>
-                        <h2 className="mt-3 mb-3 max-w-[19rem] sm:max-w-[24rem] md:max-w-[860px] text-[2.2rem] md:text-[3rem] font-[900] tracking-tight text-white text-center leading-[1.08]">
-                            <span className="block">不只是稳住度数，</span>
-                            <span className="block">也要把孩子的用眼状态带回来。</span>
+                        <h2 className="mt-3 mb-3 text-center font-[900] tracking-tight text-white leading-[1.1]">
+                            <span className="mx-auto block max-w-[18.6rem] text-[1.92rem] md:hidden">
+                                不只是稳住度数
+                                <br />
+                                也要把孩子的
+                                <br />
+                                用眼状态带回来
+                            </span>
+                            <span className="hidden md:block md:max-w-[860px] md:text-[3rem]">
+                                <span className="block">不只是稳住度数，</span>
+                                <span className="block">也要把孩子的用眼状态带回来。</span>
+                            </span>
                         </h2>
                         <p className="text-slate-300/92 font-medium text-[16px] md:text-[17px] max-w-[22rem] md:max-w-[760px] leading-[1.6] md:leading-relaxed mx-auto">
                             <span className="block md:inline whitespace-nowrap">看书、运动、日常用眼，</span>

@@ -31,9 +31,18 @@ export default function PathSection() {
             <div className={containerClass}>
                 <div className="max-w-[980px] mb-9 md:mb-14 text-center mx-auto">
                     <div className="hidden md:flex nurture-tag text-center w-fit justify-center mx-auto mb-4 text-[10px] md:text-[11px] tracking-[0.18em] opacity-80">THE CLINICAL PROTOCOL</div>
-                    <h2 className="text-[2rem] sm:text-[2.2rem] md:text-[3rem] font-[900] tracking-tight mb-5 text-white leading-[1.08] max-w-[18.5rem] sm:max-w-[24rem] md:max-w-[900px] mx-auto">
-                        <span className="block">不是复杂流程，</span>
-                        <span className="block">而是有人一步一步带着做。</span>
+                    <h2 className="mb-5 text-white font-[900] tracking-tight leading-[1.08] max-w-[18.5rem] sm:max-w-[24rem] md:max-w-[900px] mx-auto">
+                        <span className="mx-auto block max-w-[18.2rem] text-[1.9rem] sm:text-[2.2rem] md:hidden">
+                            不是复杂流程，
+                            <br />
+                            而是有人一步一步
+                            <br />
+                            带着做。
+                        </span>
+                        <span className="hidden md:block md:text-[3rem]">
+                            <span className="block">不是复杂流程，</span>
+                            <span className="block">而是有人一步一步带着做。</span>
+                        </span>
                     </h2>
                     <p className="text-slate-300 font-medium text-[16px] sm:text-[17px] md:text-[19px] leading-relaxed max-w-[18.5rem] sm:max-w-[24rem] md:max-w-none mx-auto">
                         从评估、监测到专属方案制定，<br className="md:hidden" />

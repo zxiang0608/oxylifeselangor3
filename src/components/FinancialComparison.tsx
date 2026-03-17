@@ -59,9 +59,18 @@ export default function FinancialComparison({
 
             <div className="max-w-[1200px] w-[90vw] mx-auto relative z-10">
                 <div className="text-center mb-10 md:mb-16">
-                    <h2 className="text-[2.2rem] md:text-[3rem] font-[900] text-white tracking-tight mb-5">
-                        孩子的眼睛，<br className="md:hidden" />
-                        <span className="text-emerald-400">你打算花多少钱“试错”？</span>
+                    <h2 className="mb-5 font-[900] tracking-tight text-white">
+                        <span className="mx-auto block max-w-[18.6rem] text-[1.94rem] leading-[1.08] md:hidden">
+                            孩子的眼睛
+                            <br />
+                            <span className="text-emerald-400">你打算花多少钱</span>
+                            <br />
+                            <span className="text-emerald-400">“试错”？</span>
+                        </span>
+                        <span className="hidden text-[3rem] md:block">
+                            孩子的眼睛，
+                            <span className="text-emerald-400">你打算花多少钱“试错”？</span>
+                        </span>
                     </h2>
                     <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-medium">
                         这是一份 5–10 年的真实视力账单。与其把钱花在反复试错与被动消耗上，不如先用更小成本确认更对的方向。

@@ -46,9 +46,16 @@ export default function MechanismSection() {
                         <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981]"></div>
                         四步视觉训练系统
                     </div>
-                    <h2 className="text-[2.05rem] md:text-[3rem] font-[900] tracking-tighter mb-4 md:mb-6 leading-[1.08] text-white">
-                        <span className="block md:inline whitespace-nowrap">1 个按钮，开启视力</span>
-                        <span className="block md:inline text-emerald-400 drop-shadow-[0_0_15px_rgba(16,185,129,0.5)] whitespace-nowrap md:ml-2">U-Turn</span>
+                    <h2 className="mb-4 md:mb-6 font-[900] tracking-tighter leading-[1.08] text-white">
+                        <span className="mx-auto flex max-w-[14.5rem] flex-col items-center text-[2.05rem] md:hidden">
+                                <span className="block w-[10.8rem] text-center">1 个按钮</span>
+                            <span className="mt-1 block w-full text-center">开启视力</span>
+                            <span className="mt-1 block w-[7.3rem] text-center text-emerald-400 drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]">U-Turn</span>
+                        </span>
+                        <span className="hidden md:block md:text-[3rem]">
+                            <span className="whitespace-nowrap">1 个按钮，开启视力</span>
+                            <span className="ml-2 whitespace-nowrap text-emerald-400 drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]">U-Turn</span>
+                        </span>
                     </h2>
                     <p className="text-slate-300 text-[1.05rem] md:text-xl max-w-[20rem] md:max-w-[640px] mx-auto font-medium leading-[1.55] md:leading-relaxed">
                         <span className="block md:inline whitespace-nowrap">每天 5 分钟，一键完成</span>
