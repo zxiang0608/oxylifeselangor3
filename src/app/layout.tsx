@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { Suspense } from "react";
 import TrafficTracking from "@/components/TrafficTracking";
 import "./globals.css";
 
@@ -74,7 +75,9 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} font-sans antialiased`}
       >
-        <TrafficTracking />
+        <Suspense fallback={null}>
+          <TrafficTracking />
+        </Suspense>
         {/* HUD Layer - Platinum Standard */}
         <div className="hud-marker hud-marker-tl hidden md:block" />
         <div className="hud-marker hud-marker-tr hidden md:block" />
