@@ -3,6 +3,7 @@ export type CtaTrackPayload = {
   ctaLabel: string;
   href: string;
 };
+type Consultant = "albert" | "michelle" | "default";
 
 type ClickEventLike = {
   preventDefault: () => void;
@@ -16,6 +17,11 @@ const GOOGLE_ADS_CONVERSION_BY_URL: Record<string, string> = {
 };
 
 const normalizeUrl = (url: string) => url.trim().replace(/\/$/, "");
+const getConsultantFromPathname = (pathname: string): Consultant => {
+  if (pathname.startsWith("/michelle")) return "michelle";
+  if (pathname.startsWith("/albert")) return "albert";
+  return "default";
+};
 
 declare global {
   interface Window {
@@ -34,15 +40,21 @@ export function trackWhatsAppCtaClick(
 
   const normalizedHref = normalizeUrl(payload.href);
   const conversionSendTo = GOOGLE_ADS_CONVERSION_BY_URL[normalizedHref];
+  const consultant = getConsultantFromPathname(window.location.pathname);
 
   const eventPayload = {
+    consultant,
     cta_location: payload.ctaLocation,
+    cta_text: payload.ctaLabel,
     cta_label: payload.ctaLabel,
     destination: normalizedHref,
     page_path: window.location.pathname,
   };
 
   if (typeof window.gtag === "function") {
+    window.gtag("set", "user_properties", {
+      consultant,
+    });
     window.gtag("event", "whatsapp_cta_click", eventPayload);
   }
 
@@ -54,6 +66,11 @@ export function trackWhatsAppCtaClick(
 
   if (conversionSendTo && typeof window.gtag_report_conversion === "function") {
     event?.preventDefault();
+    // Safety fallback: if Ads callback does not run (blocked script/network),
+    // still continue to WhatsApp so users are not stuck.
+    window.setTimeout(() => {
+      window.location.href = normalizedHref;
+    }, 800);
     window.gtag_report_conversion(normalizedHref, conversionSendTo);
   }
 }

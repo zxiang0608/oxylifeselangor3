@@ -14,10 +14,12 @@ declare global {
 }
 
 type TrafficSource = "facebook" | "google" | "other";
+type Consultant = "albert" | "michelle" | "default";
 
 type VisitPayload = {
   pagePath: string;
   pageUrl: string;
+  consultant: Consultant;
   landingPage: "michelle" | "albert" | "default";
   referrer: string;
   source: TrafficSource;
@@ -63,7 +65,7 @@ const classifySource = (payload: {
   return "other";
 };
 
-const getLandingPage = (pathname: string): VisitPayload["landingPage"] => {
+const getConsultantFromPathname = (pathname: string): Consultant => {
   if (pathname.startsWith("/michelle")) return "michelle";
   if (pathname.startsWith("/albert")) return "albert";
   return "default";
@@ -92,13 +94,18 @@ export default function TrafficTracking() {
     if (visitedKeySetRef.current.has(dedupeKey)) return;
     visitedKeySetRef.current.add(dedupeKey);
 
-    const landingPage = getLandingPage(pathname);
+    const consultant = getConsultantFromPathname(pathname);
+    const landingPage = consultant;
 
     if (typeof window.gtag === "function") {
+      window.gtag("set", "user_properties", {
+        consultant,
+      });
       window.gtag("event", "page_view", {
         page_path: pagePath,
         page_location: window.location.href,
         page_title: document.title,
+        consultant,
         landing_page: landingPage,
       });
     }
@@ -111,6 +118,7 @@ export default function TrafficTracking() {
     const payload: VisitPayload = {
       pagePath,
       pageUrl: window.location.href,
+      consultant,
       landingPage,
       referrer: document.referrer ?? "",
       utmSource: params.get("utm_source"),
