@@ -3,9 +3,9 @@ import LandingPage from "@/components/LandingPage";
 import { consultantCtas } from "@/lib/cta-config";
 
 export const metadata: Metadata = {
-  title: "Michelle 专属咨询页",
+  title: "儿童视力咨询服务与体验评估 | Oxylife",
   description:
-    "通过 Michelle 了解 Oxylife Selangor 儿童与家庭视力训练方案，并直接咨询或预约 RM49 体验。",
+    "使用 Personal Scope-EX 进行儿童视力咨询服务与体验评估，帮助家长了解孩子当前视力情况与适合的后续方案。位于 Petaling Jaya，欢迎 WhatsApp 预约。",
   alternates: {
     canonical: "/michelle",
   },

@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
     return (
@@ -39,6 +40,12 @@ export default function Footer() {
                         <p className="text-slate-400 text-[14px] leading-relaxed font-medium mb-3.5">
                             儿童与家庭视力训练方案
                         </p>
+                        <p className="text-slate-500 text-[11px] font-semibold tracking-[0.16em] uppercase mb-2">咨询入口</p>
+                        <div className="flex flex-col gap-1.5 text-[14px] text-slate-300 mb-4">
+                            <Link href="/" className="hover:text-emerald-300 transition-colors no-underline">首页咨询概览</Link>
+                            <Link href="/albert" className="hover:text-emerald-300 transition-colors no-underline">儿童视力评估咨询</Link>
+                            <Link href="/michelle" className="hover:text-emerald-300 transition-colors no-underline">儿童视力咨询体验</Link>
+                        </div>
                         <div className="flex flex-col gap-2 text-[14px] text-slate-300">
                             <a href="#" className="hover:text-emerald-300 transition-colors no-underline">Privacy Policy</a>
                             <a href="#" className="hover:text-emerald-300 transition-colors no-underline">Terms of Service</a>

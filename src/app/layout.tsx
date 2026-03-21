@@ -24,21 +24,21 @@ const siteUrl = getSiteUrl();
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
 const GOOGLE_ADS_ID =
   process.env.NEXT_PUBLIC_GOOGLE_ADS_ID?.trim() || "AW-18031279990";
-const GOOGLE_SCRIPT_ID = GOOGLE_ADS_ID || GA_MEASUREMENT_ID;
+// Reuse one global gtag loader; prefer GA4 stream ID, fallback to Ads ID.
+const GOOGLE_SCRIPT_ID = GA_MEASUREMENT_ID || GOOGLE_ADS_ID;
+const seoTitle = "儿童视力咨询与体验评估 | Oxylife";
+const seoDescription =
+  "使用 Personal Scope-EX 进行儿童视力咨询与体验评估，帮助家长了解孩子目前视力状况与后续方案。位于 Petaling Jaya，欢迎 WhatsApp 咨询预约。";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
-  title: {
-    default: "Oxylife | Eye Treatment at Home",
-    template: "%s | Oxylife | Eye Treatment at Home",
-  },
+  title: seoTitle,
   icons: {
-    icon: "/images/oxylife-logo-new.png",
-    shortcut: "/images/oxylife-logo-new.png",
-    apple: "/images/oxylife-logo-new.png",
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
   },
-  description:
-    "Oxylife Selangor 提供儿童与家庭视力训练方案，帮助评估是否适合开始、减轻用眼负担，并比较长期效果、安全性、孩子配合度与整体费用。",
+  description: seoDescription,
   alternates: {
     canonical: "/",
   },
@@ -56,17 +56,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    siteName: "Oxylife | Eye Treatment at Home",
+    siteName: "Oxylife",
     locale: "zh_CN",
-    title: "Oxylife | Eye Treatment at Home",
-    description:
-      "帮助家长先判断孩子是否适合开始，再比较长期效果、安全性、孩子配合度与整体费用。",
+    title: seoTitle,
+    description: seoDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oxylife | Eye Treatment at Home",
-    description:
-      "帮助家长先判断孩子是否适合开始，再比较长期效果、安全性、孩子配合度与整体费用。",
+    title: seoTitle,
+    description: seoDescription,
   },
 };
 

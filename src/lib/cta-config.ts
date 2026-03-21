@@ -9,9 +9,9 @@ export type LandingCtaConfig = {
 
 export const defaultLandingCta: LandingCtaConfig = {
   contactLabel: "专家咨询",
-  contactHref: "#enrollment",
+  contactHref: "/consultant",
   trialLabel: "锁定 RM49 线下体验",
-  trialHref: "#enrollment",
+  trialHref: "/consultant",
   floatingAriaLabel: "WhatsApp 联系",
 };
 

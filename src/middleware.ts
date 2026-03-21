@@ -1,37 +1,19 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-const MICHELLE_DEFAULT_HOSTS = new Set([
-  "oxylifeselangor.com",
-  "www.oxylifeselangor.com",
-]);
+const COOKIE_NAME = "consultant";
 
 export function middleware(request: NextRequest) {
-  if (request.nextUrl.pathname !== "/") {
-    return NextResponse.next();
+  const response = NextResponse.next();
+  const existing = request.cookies.get(COOKIE_NAME)?.value;
+
+  if (existing === "albert" || existing === "michelle") {
+    return response;
   }
 
-  const host =
-    request.headers.get("x-forwarded-host") ?? request.headers.get("host");
-
-  if (!host || !MICHELLE_DEFAULT_HOSTS.has(host)) {
-    return NextResponse.next();
-  }
-
-  const existingConsultant = request.cookies.get("consultant")?.value;
-  const assignedConsultant =
-    existingConsultant === "albert" || existingConsultant === "michelle"
-      ? existingConsultant
-      : Math.random() < 0.5
-        ? "albert"
-        : "michelle";
-
-  const redirectUrl = request.nextUrl.clone();
-  redirectUrl.pathname = `/${assignedConsultant}`;
-
-  const response = NextResponse.redirect(redirectUrl, 308);
+  const assignedConsultant = Math.random() < 0.5 ? "albert" : "michelle";
   response.cookies.set({
-    name: "consultant",
+    name: COOKIE_NAME,
     value: assignedConsultant,
     path: "/",
     maxAge: 60 * 60 * 24 * 30,

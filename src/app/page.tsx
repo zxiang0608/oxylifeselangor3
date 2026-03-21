@@ -3,9 +3,9 @@ import LandingPage from "@/components/LandingPage";
 import { defaultLandingCta } from "@/lib/cta-config";
 
 export const metadata: Metadata = {
-  title: "Oxylife | Eye Treatment at Home",
+  title: "儿童视力咨询与体验评估 | Oxylife",
   description:
-    "先帮助家长判断孩子是否适合开始，再比较长期效果、安全性、孩子配合度与整体费用。",
+    "使用 Personal Scope-EX 进行儿童视力咨询与体验评估，帮助家长了解孩子目前视力状况与后续方案。位于 Petaling Jaya，欢迎 WhatsApp 咨询预约。",
   alternates: {
     canonical: "/",
   },

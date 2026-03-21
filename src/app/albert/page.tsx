@@ -3,9 +3,9 @@ import LandingPage from "@/components/LandingPage";
 import { consultantCtas } from "@/lib/cta-config";
 
 export const metadata: Metadata = {
-  title: "Albert 专属咨询页",
+  title: "儿童视力评估与咨询服务 | Oxylife",
   description:
-    "通过 Albert 了解 Oxylife Selangor 儿童与家庭视力训练方案，并直接咨询或预约 RM49 体验。",
+    "使用 Personal Scope-EX 提供儿童视力评估与咨询服务，协助家长进一步了解孩子的视力情况与后续安排。位于 Petaling Jaya，欢迎 WhatsApp 咨询。",
   alternates: {
     canonical: "/albert",
   },
