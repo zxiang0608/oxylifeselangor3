@@ -55,6 +55,9 @@ export default function LandingPage({
     "@context": "https://schema.org",
     "@type": "Product",
     name: "IZON 视力自愈方案",
+    image: [
+      "https://oxylifeselangor.com/device-render.png",
+    ],
     brand: {
       "@type": "Brand",
       name: "Oxylife Selangor",
