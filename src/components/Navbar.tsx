@@ -40,12 +40,12 @@ export default function Navbar({
                     href={contactHref}
                     target={contactHref.startsWith('http') ? '_blank' : undefined}
                     rel={contactHref.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    onClick={() =>
+                    onClick={(event) =>
                         trackWhatsAppCtaClick({
                             ctaLocation: "navbar",
                             ctaLabel: contactLabel,
                             href: contactHref,
-                        })
+                        }, event)
                     }
                     className="relative group min-w-[7.9rem] md:min-w-0 whitespace-nowrap text-[10px] md:text-[11px] font-[800] text-white tracking-[0.08em] md:tracking-[0.16em] bg-blue-600 px-4.5 md:px-8 py-2.5 md:py-3.5 rounded-full hover:bg-blue-500 transition-all cursor-pointer overflow-visible shadow-[0_10px_24px_rgba(37,99,235,0.22)] no-underline inline-flex items-center justify-center text-center"
                 >

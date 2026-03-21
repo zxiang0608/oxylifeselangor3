@@ -18,10 +18,28 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const redirectUrl = request.nextUrl.clone();
-  redirectUrl.pathname = "/michelle";
+  const existingConsultant = request.cookies.get("consultant")?.value;
+  const assignedConsultant =
+    existingConsultant === "albert" || existingConsultant === "michelle"
+      ? existingConsultant
+      : Math.random() < 0.5
+        ? "albert"
+        : "michelle";
 
-  return NextResponse.redirect(redirectUrl, 308);
+  const redirectUrl = request.nextUrl.clone();
+  redirectUrl.pathname = `/${assignedConsultant}`;
+
+  const response = NextResponse.redirect(redirectUrl, 308);
+  response.cookies.set({
+    name: "consultant",
+    value: assignedConsultant,
+    path: "/",
+    maxAge: 60 * 60 * 24 * 30,
+    sameSite: "lax",
+    secure: true,
+  });
+
+  return response;
 }
 
 export const config = {

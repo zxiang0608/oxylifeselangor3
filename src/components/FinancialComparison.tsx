@@ -141,12 +141,12 @@ export default function FinancialComparison({
                         href={trialHref}
                         target={trialHref.startsWith('http') ? '_blank' : undefined}
                         rel={trialHref.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        onClick={() =>
+                        onClick={(event) =>
                             trackWhatsAppCtaClick({
                                 ctaLocation: "financial-comparison",
                                 ctaLabel: trialLabel,
                                 href: trialHref,
-                            })
+                            }, event)
                         }
                         className="relative group inline-block no-underline"
                     >
