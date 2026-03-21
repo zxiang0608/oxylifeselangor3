@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import TrafficTracking from "@/components/TrafficTracking";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -73,6 +74,7 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} font-sans antialiased`}
       >
+        <TrafficTracking />
         {/* HUD Layer - Platinum Standard */}
         <div className="hud-marker hud-marker-tl hidden md:block" />
         <div className="hud-marker hud-marker-tr hidden md:block" />

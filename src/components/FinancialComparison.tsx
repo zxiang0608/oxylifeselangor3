@@ -1,4 +1,7 @@
+"use client";
+
 import React from 'react';
+import { trackWhatsAppCtaClick } from "@/lib/tracking";
 type FinancialComparisonProps = {
     trialLabel?: string;
     trialHref?: string;
@@ -138,6 +141,13 @@ export default function FinancialComparison({
                         href={trialHref}
                         target={trialHref.startsWith('http') ? '_blank' : undefined}
                         rel={trialHref.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        onClick={() =>
+                            trackWhatsAppCtaClick({
+                                ctaLocation: "financial-comparison",
+                                ctaLabel: trialLabel,
+                                href: trialHref,
+                            })
+                        }
                         className="relative group inline-block no-underline"
                     >
                         {/* Hero breathing glow behind the button */}

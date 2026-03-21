@@ -1,4 +1,7 @@
+"use client";
+
 import React from 'react';
+import { trackWhatsAppCtaClick } from "@/lib/tracking";
 
 type EnrollmentSectionProps = {
     contactLabel?: string;
@@ -30,6 +33,13 @@ export default function EnrollmentSection({
                                 href={contactHref}
                                 target={contactHref.startsWith('http') ? '_blank' : undefined}
                                 rel={contactHref.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                onClick={() =>
+                                    trackWhatsAppCtaClick({
+                                        ctaLocation: "enrollment",
+                                        ctaLabel: contactLabel,
+                                        href: contactHref,
+                                    })
+                                }
                                 className="relative bg-white text-emerald-950 px-10 md:px-20 py-5 md:py-6 rounded-full font-bold text-lg md:text-xl tracking-[0.06em] md:tracking-widest shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:bg-emerald-400 hover:shadow-[0_0_40px_rgba(16,185,129,0.4)] hover:text-white transition-all duration-300 transform hover:-translate-y-2 border-none cursor-pointer z-10 no-underline inline-flex items-center justify-center text-center whitespace-nowrap"
                             >
                                 {contactLabel}
