@@ -28,8 +28,6 @@ type VisitPayload = {
   fbclid: string | null;
 };
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
 const META_PIXEL_ID_DEFAULT = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 const META_PIXEL_ID_ALBERT = process.env.NEXT_PUBLIC_META_PIXEL_ID_ALBERT;
 const META_PIXEL_ID_MICHELLE = process.env.NEXT_PUBLIC_META_PIXEL_ID_MICHELLE;
@@ -87,8 +85,6 @@ export default function TrafficTracking() {
 
   const queryString = useMemo(() => searchParams.toString(), [searchParams]);
   const pagePath = queryString ? `${pathname}?${queryString}` : pathname;
-  const hasGoogleTag = Boolean(GA_MEASUREMENT_ID || GOOGLE_ADS_ID);
-  const googleScriptId = GA_MEASUREMENT_ID || GOOGLE_ADS_ID;
 
   useEffect(() => {
     const dedupeKey = pagePath;
@@ -98,7 +94,7 @@ export default function TrafficTracking() {
 
     const landingPage = getLandingPage(pathname);
 
-    if (hasGoogleTag && typeof window.gtag === "function") {
+    if (typeof window.gtag === "function") {
       window.gtag("event", "page_view", {
         page_path: pagePath,
         page_location: window.location.href,
@@ -138,47 +134,10 @@ export default function TrafficTracking() {
     }).catch(() => {
       // Ignore tracking transport failures
     });
-  }, [activeMetaPixelId, hasGoogleTag, pagePath, pathname]);
+  }, [activeMetaPixelId, pagePath, pathname]);
 
   return (
     <>
-      {googleScriptId ? (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${googleScriptId}`}
-            strategy="afterInteractive"
-          />
-          <Script id="ga4-bootstrap" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              window.gtag = gtag;
-              gtag('js', new Date());
-              ${GA_MEASUREMENT_ID ? `gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });` : ""}
-              ${GOOGLE_ADS_ID ? `gtag('config', '${GOOGLE_ADS_ID}');` : ""}
-            `}
-          </Script>
-          <Script id="google-ads-conversion-helper" strategy="afterInteractive">
-            {`
-              window.gtag_report_conversion = function(url, sendTo) {
-                var callback = function () {
-                  if (typeof(url) !== 'undefined') {
-                    window.location = url;
-                  }
-                };
-                gtag('event', 'conversion', {
-                  'send_to': sendTo,
-                  'value': 1.0,
-                  'currency': 'MYR',
-                  'event_callback': callback
-                });
-                return false;
-              };
-            `}
-          </Script>
-        </>
-      ) : null}
-
       {activeMetaPixelId ? (
         <>
           <Script

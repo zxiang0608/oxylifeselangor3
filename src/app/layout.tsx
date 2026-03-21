@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { Suspense } from "react";
+import Script from "next/script";
 import TrafficTracking from "@/components/TrafficTracking";
 import "./globals.css";
 
@@ -20,6 +21,10 @@ const getSiteUrl = () => {
 };
 
 const siteUrl = getSiteUrl();
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
+const GOOGLE_ADS_ID =
+  process.env.NEXT_PUBLIC_GOOGLE_ADS_ID?.trim() || "AW-18031279990";
+const GOOGLE_SCRIPT_ID = GOOGLE_ADS_ID || GA_MEASUREMENT_ID;
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -75,6 +80,38 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} font-sans antialiased`}
       >
+        {GOOGLE_SCRIPT_ID ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_SCRIPT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-tag-bootstrap" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                window.gtag = gtag;
+                gtag('js', new Date());
+                ${GA_MEASUREMENT_ID ? `gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });` : ""}
+                ${GOOGLE_ADS_ID ? `gtag('config', '${GOOGLE_ADS_ID}');` : ""}
+                window.gtag_report_conversion = function(url, sendTo) {
+                  var callback = function () {
+                    if (typeof(url) !== 'undefined') {
+                      window.location = url;
+                    }
+                  };
+                  gtag('event', 'conversion', {
+                    'send_to': sendTo,
+                    'value': 1.0,
+                    'currency': 'MYR',
+                    'event_callback': callback
+                  });
+                  return false;
+                };
+              `}
+            </Script>
+          </>
+        ) : null}
         <Suspense fallback={null}>
           <TrafficTracking />
         </Suspense>
