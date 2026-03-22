@@ -509,7 +509,7 @@ export default function Hero() {
                                     {[
                                         { cat: "防控原理", title: "主动校准用眼状态，引导度数逐步回落。" },
                                         { cat: "安全性", title: "非接触式物理训练，无感染风险。" },
-                                        { cat: "孩子体验", title: "每天 5 分钟，如游戏般轻松配合。" },
+                                        { cat: "孩子体验", title: "每次5分钟，如游戏般轻松配合。" },
                                         { cat: "长期费用", title: "一次投入，全家受用，利于家庭长期规划。" }
                                     ].map((item, idx) => (
                                         <div key={idx} className="relative group border-b border-white/[0.03] last:border-0 px-4 py-3 md:grid md:grid-cols-12 md:gap-x-5 md:gap-y-3 md:px-12 md:py-7 md:items-center transition-all">
@@ -521,7 +521,7 @@ export default function Hero() {
                                                 <h5 className="max-w-[17.8rem] sm:max-w-none font-semibold text-[1rem] md:text-[17px] text-slate-100 leading-[1.45] md:leading-snug tracking-[0.015em]">
                                                     {idx === 0 ? "主动校准用眼状态，引导度数逐步回落" :
                                                      idx === 1 ? "非接触式物理训练，无感染风险" :
-                                                     idx === 2 ? "每天 5 分钟，如游戏般轻松配合" :
+                                                     idx === 2 ? "每次5分钟，如游戏般轻松配合" :
                                                      "一次投入，全家受用，更利于长期规划"}
                                                 </h5>
                                                 <div className="md:hidden flex h-7 min-w-7 items-center justify-center rounded-full border border-emerald-500/10 bg-emerald-500/[0.045] shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">

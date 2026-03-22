@@ -58,7 +58,7 @@ export default function MechanismSection() {
                         </span>
                     </h2>
                     <p className="text-slate-300 text-[1.05rem] md:text-xl max-w-[20rem] md:max-w-[640px] mx-auto font-medium leading-[1.55] md:leading-relaxed">
-                        <span className="block md:inline whitespace-nowrap">每天 5 分钟，一键完成</span>
+                        <span className="block md:inline whitespace-nowrap">每次5分钟，一键完成</span>
                         <span className="block md:inline md:ml-1 whitespace-nowrap">完整视觉训练流程。</span>
                     </p>
                 </div>
@@ -186,7 +186,7 @@ export default function MechanismSection() {
                                     <div className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse drop-shadow-[0_0_8px_rgba(16,185,129,1)]"></div>
                                 </div>
                                 <p className="text-[1.7rem] font-bold tracking-tight leading-snug max-w-[20rem] md:max-w-none">
-                                    <span className="hidden md:inline">每天流程：按下开始 <span className="text-emerald-400 mx-1.5 md:mx-2 font-black">→</span> 孩子看 5 分钟 <span className="text-emerald-400 mx-1.5 md:mx-2 font-black">→</span> 结束后关机。</span>
+                                    <span className="hidden md:inline">每次流程：按下开始 <span className="text-emerald-400 mx-1.5 md:mx-2 font-black">→</span> 孩子看 5 分钟 <span className="text-emerald-400 mx-1.5 md:mx-2 font-black">→</span> 结束后关机。</span>
                                 </p>
                             </div>
 
