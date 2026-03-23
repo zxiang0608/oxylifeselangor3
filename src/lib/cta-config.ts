@@ -15,6 +15,14 @@ export const defaultLandingCta: LandingCtaConfig = {
   floatingAriaLabel: "WhatsApp 联系",
 };
 
+export const englishLandingCta: LandingCtaConfig = {
+  contactLabel: "Check Suitability",
+  contactHref: "/consultant",
+  trialLabel: "Lock In RM49 Assessment",
+  trialHref: "/consultant",
+  floatingAriaLabel: "WhatsApp contact",
+};
+
 export const consultantCtas: Record<"albert" | "michelle", LandingCtaConfig> = {
   albert: {
     slug: "albert",

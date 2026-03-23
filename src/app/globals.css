@@ -307,3 +307,49 @@
     border-right: 1px solid #94a3b8;
   }
 }
+
+/* /en typography scope */
+.en-font-scope {
+  font-family: var(--font-en-inter), Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+.en-font-scope h1 {
+  font-family: var(--font-en-hero), var(--font-en-inter), Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 700 !important;
+}
+
+.en-font-scope h2,
+.en-font-scope h3,
+.en-font-scope h4,
+.en-font-scope h5,
+.en-font-scope h6 {
+  font-family: var(--font-en-inter), Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 700 !important;
+}
+
+.en-font-scope p,
+.en-font-scope li,
+.en-font-scope dd,
+.en-font-scope dt,
+.en-font-scope summary {
+  font-family: var(--font-en-inter), Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+}
+
+.en-font-scope .font-medium {
+  font-weight: 500 !important;
+}
+
+.en-font-scope .font-semibold,
+.en-font-scope nav a,
+.en-font-scope button,
+.en-font-scope a[class*="rounded-full"] {
+  font-family: var(--font-en-inter), Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 600 !important;
+}
+
+@media (max-width: 767px) {
+  .en-font-scope h1 {
+    font-weight: 600 !important;
+  }
+}

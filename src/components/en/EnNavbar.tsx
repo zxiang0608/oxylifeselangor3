@@ -9,7 +9,7 @@ type NavbarProps = {
 };
 
 export default function Navbar({
-    contactLabel = '专家咨询',
+    contactLabel = 'Check Suitability',
     contactHref = '#enrollment',
 }: NavbarProps) {
     const mobileShortLabel = contactLabel === 'Check Suitability' ? 'Check Fit' : contactLabel;
@@ -34,10 +34,10 @@ export default function Navbar({
                 </div>
                 <div className="hidden md:flex gap-12">
                     {[
-                        { name: '为什么会近视/散光', path: 'comparison' },
-                        { name: '自愈原理', path: 'mechanism' },
-                        { name: '操作方式', path: 'path' },
-                        { name: '真实见证', path: 'proof' },
+                        { name: 'Why Vision Changes', path: 'comparison' },
+                        { name: 'How It Works', path: 'mechanism' },
+                        { name: 'Process', path: 'path' },
+                        { name: 'Testimonials', path: 'proof' },
                     ].map(item => (
                         <a key={item.name} href={`#${item.path}`} className="text-[12px] font-bold tracking-[0.1em] text-slate-300 hover:text-emerald-400 transition-colors no-underline">
                             {item.name}
