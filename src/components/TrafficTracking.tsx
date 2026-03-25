@@ -30,9 +30,12 @@ type VisitPayload = {
   fbclid: string | null;
 };
 
-const META_PIXEL_ID_DEFAULT = process.env.NEXT_PUBLIC_META_PIXEL_ID;
-const META_PIXEL_ID_ALBERT = process.env.NEXT_PUBLIC_META_PIXEL_ID_ALBERT;
-const META_PIXEL_ID_MICHELLE = process.env.NEXT_PUBLIC_META_PIXEL_ID_MICHELLE;
+const ALBERT_PIXEL_FALLBACK_ID = "1179069353627076";
+const META_PIXEL_ID_DEFAULT =
+  process.env.NEXT_PUBLIC_META_PIXEL_ID?.trim() || ALBERT_PIXEL_FALLBACK_ID;
+const META_PIXEL_ID_ALBERT =
+  process.env.NEXT_PUBLIC_META_PIXEL_ID_ALBERT?.trim() || ALBERT_PIXEL_FALLBACK_ID;
+const META_PIXEL_ID_MICHELLE = process.env.NEXT_PUBLIC_META_PIXEL_ID_MICHELLE?.trim();
 
 const includesAny = (value: string, keywords: string[]) =>
   keywords.some((keyword) => value.includes(keyword));
