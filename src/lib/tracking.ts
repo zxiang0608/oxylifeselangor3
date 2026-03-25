@@ -11,12 +11,7 @@ type ClickEventLike = {
   preventDefault: () => void;
 };
 
-const GOOGLE_ADS_CONVERSION_BY_URL: Record<string, string> = {
-  "https://wa.link/g14bi1": "AW-18031279990/3-ZhCIqK6YwcEPb-_ZVD",
-  "https://wa.link/3s5zwr": "AW-18031279990/IEUvCI2K6YwcEPb-_ZVD",
-  "https://wa.link/khv3s5": "AW-18031279990/TPA8CJCK6YwcEPb-_ZVD",
-  "https://wa.link/slw57k": "AW-18031279990/wSVuCJOK6YwcEPb-_ZVD",
-};
+const GOOGLE_ADS_WHATSAPP_CLICK_SEND_TO = "AW-18031279990/anr9COSko44cEPb-_ZVD";
 
 const CONSULTANT_COOKIE_NAME = "consultant";
 const CONSULTANT_STORAGE_KEY = "consultant";
@@ -164,8 +159,9 @@ export function trackWhatsAppCtaClick(
     event?.preventDefault();
   }
 
-  const conversionSendTo = GOOGLE_ADS_CONVERSION_BY_URL[normalizedHref];
+  const conversionSendTo = GOOGLE_ADS_WHATSAPP_CLICK_SEND_TO;
   const consultant = resolved.consultant;
+  const intentType = getConsultantIntent(payload);
 
   const eventPayload = {
     consultant,
@@ -176,11 +172,17 @@ export function trackWhatsAppCtaClick(
     page_path: window.location.pathname,
   };
 
+  const ga4EventPayload = {
+    ...eventPayload,
+    assigned_consultant: consultant,
+    intent_type: intentType,
+  };
+
   if (typeof window.gtag === "function") {
     window.gtag("set", "user_properties", {
       consultant,
     });
-    window.gtag("event", "whatsapp_cta_click", eventPayload);
+    window.gtag("event", "whatsapp_cta_click", ga4EventPayload);
   }
 
   if (typeof window.fbq === "function") {
