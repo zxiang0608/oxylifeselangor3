@@ -120,7 +120,13 @@
 
   body {
     color: #fff;
-    background: radial-gradient(150% 150% at 50% 0%, #080E1A 0%, #05070A 100%);
+    background-color: #121416;
+    background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.015) 0%,
+      rgba(255, 255, 255, 0) 38%,
+      rgba(0, 0, 0, 0.16) 100%
+    );
     background-attachment: fixed;
     overflow-x: hidden;
     font-family: var(--font-sans), sans-serif;
@@ -142,6 +148,23 @@
 /* Subtle Matte Texture - Premium 'Paper-like' Feel */
 .bg-noise {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.bg-s-curve {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 3200' fill='none'%3E%3Cdefs%3E%3Cfilter id='blur' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeGaussianBlur stdDeviation='24'/%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url(%23blur)' opacity='0.46'%3E%3Cpath d='M140 220C910 -70 1390 470 980 980C720 1305 250 1285 420 1790C620 2380 1270 2330 1520 2010' stroke='rgba(255,255,255,0.19)' stroke-width='154' stroke-linecap='round'/%3E%3Cpath d='M160 244C892 -28 1340 496 948 980C702 1285 290 1292 452 1778C644 2348 1240 2304 1482 1992' stroke='rgba(255,255,255,0.08)' stroke-width='64' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 108% auto;
+  opacity: 0.42;
+}
+
+@media (min-width: 1024px) {
+  .bg-s-curve {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2400 1800' fill='none'%3E%3Cdefs%3E%3Cfilter id='blur' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeGaussianBlur stdDeviation='22'/%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url(%23blur)' opacity='0.44'%3E%3Cpath d='M100 220C860 -40 1740 80 1700 470C1660 880 840 820 860 1160C884 1500 1650 1560 2290 1280' stroke='rgba(255,255,255,0.18)' stroke-width='140' stroke-linecap='round'/%3E%3Cpath d='M138 246C882 8 1684 116 1648 484C1612 856 886 834 904 1150C926 1470 1622 1516 2248 1250' stroke='rgba(255,255,255,0.07)' stroke-width='56' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E");
+    background-position: center 40px;
+    background-size: 108% auto;
+    opacity: 0.4;
+  }
 }
 
 

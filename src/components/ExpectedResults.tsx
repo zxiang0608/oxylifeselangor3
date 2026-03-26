@@ -22,7 +22,7 @@ export default function ExpectedResults() {
     ];
 
     return (
-        <section id="expected-results" className="py-12 md:py-20 bg-[#080C14]">
+        <section id="expected-results" className="py-12 md:py-20 bg-[#121416]">
             <div className={containerClass}>
                 <div>
                     <div className="mx-auto mb-5 md:mb-7 max-w-[1320px] flex flex-col items-center text-center">

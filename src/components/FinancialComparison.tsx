@@ -56,7 +56,7 @@ export default function FinancialComparison({
     ];
 
     return (
-        <section className="relative py-12 md:py-20 bg-[#080E1A] overflow-hidden">
+        <section className="relative py-12 md:py-20 bg-[#121416] overflow-hidden">
             {/* Ambient Background Light */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none"></div>
 

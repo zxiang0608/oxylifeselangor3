@@ -139,12 +139,9 @@ export default function RootLayout({
         <div className="hud-marker hud-marker-bl hidden md:block" />
         <div className="hud-marker hud-marker-br hidden md:block" />
 
-        {/* Global Texture Layer - Film Grain */}
-        <div className="bg-noise fixed inset-0 z-0 pointer-events-none mix-blend-overlay" style={{ opacity: 0.02 }} />
-
-        {/* Global Ambient Glows - 'Wood' Deep Forest Breathing (opacity < 15%) */}
-        <div className="fixed top-[-20%] left-[-20%] w-[80vw] h-[80vw] rounded-full bg-[#142B23] pointer-events-none z-0" style={{ filter: 'blur(1200px)', opacity: 0.12 }} />
-        <div className="fixed bottom-[-20%] right-[-20%] w-[80vw] h-[80vw] rounded-full bg-[#142B23] pointer-events-none z-0" style={{ filter: 'blur(1200px)', opacity: 0.12 }} />
+        {/* Global Texture + Subtle S-Curve Background Motif */}
+        <div className="bg-noise fixed inset-0 z-0 pointer-events-none mix-blend-overlay" style={{ opacity: 0.015 }} />
+        <div className="bg-s-curve fixed inset-0 z-[1] pointer-events-none" />
 
         {children}
       </body>

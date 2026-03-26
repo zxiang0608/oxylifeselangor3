@@ -17,7 +17,7 @@ export default function Navbar({
     return (
         <nav className="absolute top-0 left-0 w-full z-[100] transition-all duration-300 py-1 md:py-3">
             {/* Background Container */}
-            <div className="absolute inset-0 bg-[#080E1A]/28 backdrop-blur-[22px] border-b border-white/5 shadow-[0_6px_34px_rgba(0,0,0,0.52)]"></div>
+            <div className="absolute inset-0 bg-[#121416]/28 backdrop-blur-[22px] border-b border-white/5 shadow-[0_6px_34px_rgba(0,0,0,0.52)]"></div>
             {/* Film Grain Layer (2% Opacity) */}
             <div className="absolute inset-0 opacity-[0.02] bg-noise pointer-events-none"></div>
 

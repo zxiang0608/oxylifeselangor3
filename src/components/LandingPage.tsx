@@ -87,7 +87,7 @@ export default function LandingPage({
   };
 
   return (
-    <main className="relative bg-[#080C14] min-h-screen">
+    <main className="relative bg-[#121416] min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

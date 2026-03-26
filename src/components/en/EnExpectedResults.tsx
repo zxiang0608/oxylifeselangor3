@@ -22,7 +22,7 @@ export default function ExpectedResults() {
     ];
 
     return (
-        <section id="expected-results" className="pt-12 pb-8 md:pt-20 md:pb-10 bg-[#080C14]">
+        <section id="expected-results" className="pt-12 pb-8 md:pt-20 md:pb-10 bg-[#121416]">
             <div className={containerClass}>
                 <div>
                     <div className="mx-auto mb-4 md:mb-5 max-w-[1320px] flex flex-col items-center text-center">

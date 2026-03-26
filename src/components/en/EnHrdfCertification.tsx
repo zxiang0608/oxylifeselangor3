@@ -27,7 +27,7 @@ export default function HrdfCertification() {
     ];
 
     return (
-        <section className="py-12 md:py-20 relative overflow-hidden bg-[#080E1A]">
+        <section className="py-12 md:py-20 relative overflow-hidden bg-[#121416]">
 
             {/* God Rays / Tyndall light effect */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
