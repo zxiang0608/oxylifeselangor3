@@ -29,10 +29,17 @@ export default function LandingPage({
 
   const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "MedicalBusiness",
     name: "Oxylife Selangor",
     url: siteUrl,
     telephone: "+60 11-5559 4933",
+    priceRange: "RM49–RM200",
+    openingHours: ["Mo-Fr 10:00-19:00", "Sa 10:00-17:00"],
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 3.1047,
+      longitude: 101.6369,
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: "A-13-10, Pinnacle Petaling Jaya, Lrg. Utara, Pjs 52",
@@ -41,6 +48,9 @@ export default function LandingPage({
       postalCode: "46200",
       addressCountry: "MY",
     },
+    sameAs: [
+      "https://www.facebook.com/oxylifeselangor",
+    ],
   };
 
   const websiteSchema = {
@@ -71,6 +81,24 @@ export default function LandingPage({
       availability: "https://schema.org/InStock",
       url: `${siteUrl}${canonicalPath}#comparison-cta`,
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      reviewCount: "3",
+      bestRating: "5",
+      worstRating: "1",
+    },
+  };
+
+  const speakableSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Oxylife Selangor — 儿童视力训练",
+    url: `${siteUrl}${canonicalPath}`,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["#proof", "#mechanism", "[id='education']"],
+    },
   };
 
   const faqSchema = {
@@ -95,6 +123,10 @@ export default function LandingPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
       />
       <script
         type="application/ld+json"

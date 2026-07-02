@@ -60,7 +60,7 @@ export default function PathSection() {
                                 <div className="flex items-center justify-center gap-3 mb-4">
                                     <div className="text-[1.8rem] font-[900] text-emerald-400/26 tracking-tighter leading-none shrink-0">{item.step}</div>
                                     <div className="flex items-center min-h-[2.15rem]">
-                                        <h4 className="text-[1.12rem] font-[900] tracking-tight text-white leading-[1.16] whitespace-nowrap">{item.title}</h4>
+                                        <h3 className="text-[1.12rem] font-[900] tracking-tight text-white leading-[1.16] whitespace-nowrap">{item.title}</h3>
                                     </div>
                                 </div>
 
@@ -103,7 +103,7 @@ export default function PathSection() {
                                 <div className="flex items-center justify-center gap-4 mb-6">
                                     <div className="text-[2.2rem] md:text-[2.7rem] font-[900] text-emerald-400/26 tracking-tighter leading-none shrink-0">{item.step}</div>
                                     <div className="flex items-center min-h-[2.7rem] md:min-h-[3rem]">
-                                        <h4 className="text-[1.3rem] md:text-[1.55rem] font-[900] tracking-tight text-white leading-[1.14] whitespace-nowrap">{item.title}</h4>
+                                        <h3 className="text-[1.3rem] md:text-[1.55rem] font-[900] tracking-tight text-white leading-[1.14] whitespace-nowrap">{item.title}</h3>
                                     </div>
                                 </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { trackWhatsAppCtaClick } from "@/lib/tracking";
 
 type NavbarProps = {
@@ -43,6 +44,9 @@ export default function Navbar({
                             {item.name}
                         </a>
                     ))}
+                    <Link href="/sewa" className="text-[12px] font-bold tracking-[0.1em] text-emerald-400 hover:text-emerald-300 transition-colors no-underline">
+                        设备租用
+                    </Link>
                 </div>
                 {/* CTA Button */}
                 <a

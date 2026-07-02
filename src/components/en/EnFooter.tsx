@@ -46,6 +46,7 @@ export default function Footer() {
                             <Link href="/" className="hover:text-emerald-300 transition-colors no-underline">Chinese Homepage</Link>
                             <Link href="/albert" className="hover:text-emerald-300 transition-colors no-underline">Albert Page</Link>
                             <Link href="/michelle" className="hover:text-emerald-300 transition-colors no-underline">Michelle Page</Link>
+                            <Link href="/rent" className="hover:text-emerald-300 transition-colors no-underline">Rent an IZON Device</Link>
                         </div>
                         <div className="flex flex-col gap-2 text-[14px] text-slate-300">
                             <a href="#" className="hover:text-emerald-300 transition-colors no-underline">Privacy Policy</a>

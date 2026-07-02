@@ -51,7 +51,7 @@ export default function Hero() {
                             <div className="absolute bottom-[8%] h-16 w-[84%] rounded-full bg-black/60 blur-[28px] opacity-85 sm:w-[78%]"></div>
                             <div className="absolute bottom-[8.8%] h-[1px] w-[62%] bg-gradient-to-r from-transparent via-emerald-400/16 to-transparent"></div>
                             <div className="absolute inset-x-[18%] bottom-[20%] h-24 rounded-full bg-emerald-500/[0.035] blur-3xl opacity-75"></div>
-                            <img src={deviceMain} alt="izon" className="relative z-10 w-full max-w-[255px] sm:max-w-[292px] md:max-w-[500px] lg:max-w-[600px] drop-shadow-[0_24px_64px_rgba(0,0,0,0.42)] md:drop-shadow-[0_40px_100px_rgba(16,185,129,0.2)]" />
+                            <img src={deviceMain} alt="izon" fetchPriority="high" loading="eager" className="relative z-10 w-full max-w-[255px] sm:max-w-[292px] md:max-w-[500px] lg:max-w-[600px] drop-shadow-[0_24px_64px_rgba(0,0,0,0.42)] md:drop-shadow-[0_40px_100px_rgba(16,185,129,0.2)]" />
                         </div>
                     </div>
                     <div className="w-full lg:w-1/2 max-w-[19rem] sm:max-w-[21rem] md:max-w-none flex flex-col items-center md:items-start text-center md:text-left">
@@ -82,7 +82,7 @@ export default function Hero() {
 
                 <div className="mb-14 md:mb-48 pt-8 md:pt-16">
                     <div className="mb-6 md:mb-12 text-center flex flex-col items-center">
-                        <h3 className="text-[1.76rem] sm:text-[2rem] md:text-[3.5rem] font-[900] tracking-tighter text-white mb-2 md:mb-4 leading-[1.08]">为什么度数一直在起？</h3>
+                        <h2 className="text-[1.76rem] sm:text-[2rem] md:text-[3.5rem] font-[900] tracking-tighter text-white mb-2 md:mb-4 leading-[1.08]">为什么度数一直在起？</h2>
                         <p className="text-emerald-400 font-[800] tracking-[0.14em] uppercase text-[0.98rem] md:text-xl">因为眼睛的“零件”乱了：</p>
                     </div>
 
@@ -186,7 +186,7 @@ export default function Hero() {
                                         <div key={i} className="glass-panel w-[79vw] max-w-[19.5rem] shrink-0 snap-start rounded-[22px] px-[18px] py-[18px] flex flex-col items-center text-center border-white/[0.035] bg-[linear-gradient(180deg,rgba(255,255,255,0.018),rgba(255,255,255,0.006))] shadow-[0_18px_40px_rgba(0,0,0,0.2)]">
                                             <div className="[&>div]:mb-3.5 [&>div]:w-24 [&>div]:h-24">{item.icon}</div>
                                             <div className="max-w-[16.6rem]">
-                                                <h4 className="text-[1.26rem] font-[900] tracking-tight mb-1.5 text-emerald-400 leading-[1.12]">{item.title}</h4>
+                                                <h3 className="text-[1.26rem] font-[900] tracking-tight mb-1.5 text-emerald-400 leading-[1.12]">{item.title}</h3>
                                                 <p className="text-[12px] font-bold text-white/46 mb-2.5 tracking-[0.02em]">{item.subtitle}</p>
                                                 <p className="mx-auto max-w-[15.8rem] text-slate-200/88 text-[0.97rem] leading-[1.62] font-medium">{item.desc}</p>
                                             </div>
@@ -214,7 +214,7 @@ export default function Hero() {
                                     {items.map((item, i) => (
                                         <div key={i} className="group border-t border-white/20 pt-10 flex flex-col items-center text-center">
                                             {item.icon}
-                                            <h4 className="text-2xl md:text-[30px] font-[900] uppercase tracking-wide mb-3 text-emerald-500 group-hover:text-emerald-400 transition-colors leading-[1.3]">{item.title}</h4>
+                                            <h3 className="text-2xl md:text-[30px] font-[900] uppercase tracking-wide mb-3 text-emerald-500 group-hover:text-emerald-400 transition-colors leading-[1.3]">{item.title}</h3>
                                             <p className="text-base font-bold text-white/50 mb-5">{item.subtitle}</p>
                                             <p className="text-slate-300 text-xl md:text-[22px] leading-[1.8] font-medium">{item.desc}</p>
                                         </div>
@@ -262,9 +262,9 @@ export default function Hero() {
                             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-red-900/10 rounded-full blur-[100px] pointer-events-none group-hover:scale-105 transition-all duration-1000"></div>
 
                             <div className="relative z-10 flex-1 flex flex-col">
-                                <h4 className="inline-flex w-fit items-center gap-2 md:rounded-full md:border md:border-red-500/18 md:bg-red-500/[0.095] md:px-3 md:py-1.5 text-[10.5px] md:text-base font-bold tracking-[0.12em] md:tracking-[0.2em] text-red-400/95 mb-4 md:mb-8 md:shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
+                                <h3 className="inline-flex w-fit items-center gap-2 md:rounded-full md:border md:border-red-500/18 md:bg-red-500/[0.095] md:px-3 md:py-1.5 text-[10.5px] md:text-base font-bold tracking-[0.12em] md:tracking-[0.2em] text-red-400/95 mb-4 md:mb-8 md:shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
                                     <AlertCircle size={15} /> 传统防控路 (PASSIVE PATH)
-                                </h4>
+                                </h3>
 
                                 <div className="space-y-3.5 md:space-y-8 mb-3 md:mb-6">
                                     <div className="grid grid-cols-[2.5rem_minmax(0,1fr)] md:flex gap-x-3 md:gap-6 items-start">
@@ -278,7 +278,7 @@ export default function Hero() {
                                             </svg>
                                         </div>
                                         <div className="min-w-0 pt-0.5">
-                                            <h5 className="text-white font-bold text-[1.2rem] md:text-xl leading-[1.08] mb-1 md:mb-3">眼轴拉长</h5>
+                                            <h4 className="text-white font-bold text-[1.2rem] md:text-xl leading-[1.08] mb-1 md:mb-3">眼轴拉长</h4>
                                             <p className="text-slate-300/98 text-[0.98rem] md:text-lg leading-[1.55rem] md:leading-relaxed">眼轴像气球一样越拉越长，一旦变形，就很难恢复原状。</p>
                                         </div>
                                     </div>
@@ -293,7 +293,7 @@ export default function Hero() {
                                             </svg>
                                         </div>
                                         <div className="min-w-0 pt-0.5">
-                                            <h5 className="text-white font-bold text-[1.2rem] md:text-xl leading-[1.08] mb-1 md:mb-3">镜片越来越厚</h5>
+                                            <h4 className="text-white font-bold text-[1.2rem] md:text-xl leading-[1.08] mb-1 md:mb-3">镜片越来越厚</h4>
                                             <p className="text-slate-300/98 text-[0.98rem] md:text-lg leading-[1.55rem] md:leading-relaxed">度数每半年起，眼镜越换越厚，鼻梁负担也越来越重。</p>
                                         </div>
                                     </div>
@@ -309,7 +309,7 @@ export default function Hero() {
                                             </svg>
                                         </div>
                                         <div className="min-w-0 pt-0.5">
-                                            <h5 className="text-white font-bold text-[1.2rem] md:text-xl leading-[1.08] mb-1 md:mb-3">长期风险增加</h5>
+                                            <h4 className="text-white font-bold text-[1.2rem] md:text-xl leading-[1.08] mb-1 md:mb-3">长期风险增加</h4>
                                             <p className="text-slate-300/98 text-[0.98rem] md:text-lg leading-[1.55rem] md:leading-relaxed">当近视越来越深，未来发展成高度近视的风险也会跟着提高。</p>
                                         </div>
                                     </div>
@@ -341,10 +341,10 @@ export default function Hero() {
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-900/18 rounded-full blur-[120px] pointer-events-none group-hover:scale-110 group-hover:bg-emerald-800/18 transition-all duration-1000 ease-in-out"></div>
 
                             <div className="relative z-10 flex-1 flex flex-col">
-                                <h4 className="inline-flex w-fit items-center gap-2 text-[10.5px] md:text-base font-bold tracking-[0.12em] md:tracking-[0.2em] text-emerald-300 mb-4 md:mb-8 md:rounded-full md:border md:border-emerald-500/16 md:bg-emerald-500/[0.08] md:px-3 md:py-1.5 md:shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
+                                <h3 className="inline-flex w-fit items-center gap-2 text-[10.5px] md:text-base font-bold tracking-[0.12em] md:tracking-[0.2em] text-emerald-300 mb-4 md:mb-8 md:rounded-full md:border md:border-emerald-500/16 md:bg-emerald-500/[0.08] md:px-3 md:py-1.5 md:shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
                                     <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-300 shadow-[0_0_10px_rgba(110,231,183,0.35)] md:hidden"></span>
                                     <ShieldCheck size={15} className="hidden md:block" /> IZON 主动校准路 (ACTIVE PATH)
-                                </h4>
+                                </h3>
 
                                 <div className="space-y-4 md:space-y-8 mb-3 md:mb-6">
                                     <div className="grid grid-cols-[2.5rem_minmax(0,1fr)] md:flex gap-x-3 md:gap-6 items-start">
@@ -359,7 +359,7 @@ export default function Hero() {
                                             </svg>
                                         </div>
                                         <div className="min-w-0 pt-0.5">
-                                            <h5 className="text-white font-[860] text-[1.22rem] md:text-xl leading-[1.08] mb-1.5 md:mb-3">减缓眼轴增长</h5>
+                                            <h4 className="text-white font-[860] text-[1.22rem] md:text-xl leading-[1.08] mb-1.5 md:mb-3">减缓眼轴增长</h4>
                                             <p className="max-w-[15rem] text-slate-200/[0.92] text-[0.98rem] md:text-lg leading-[1.55rem] md:leading-relaxed">通过针对性的视觉训练，帮助减缓眼轴继续拉长。</p>
                                         </div>
                                     </div>
@@ -375,7 +375,7 @@ export default function Hero() {
                                             </svg>
                                         </div>
                                         <div className="min-w-0 pt-0.5">
-                                            <h5 className="text-white font-[860] text-[1.22rem] md:text-xl leading-[1.08] mb-1.5 md:mb-3">减缓度数加深</h5>
+                                            <h4 className="text-white font-[860] text-[1.22rem] md:text-xl leading-[1.08] mb-1.5 md:mb-3">减缓度数加深</h4>
                                             <p className="max-w-[15rem] text-slate-200/[0.92] text-[0.98rem] md:text-lg leading-[1.55rem] md:leading-relaxed">当孩子的用眼负担慢慢减轻，度数就比较不容易一直往上升。</p>
                                         </div>
                                     </div>
@@ -389,7 +389,7 @@ export default function Hero() {
                                             </svg>
                                         </div>
                                         <div className="min-w-0 pt-0.5">
-                                            <h5 className="text-white font-[860] text-[1.22rem] md:text-xl leading-[1.08] mb-1.5 md:mb-3">降低长期风险</h5>
+                                            <h4 className="text-white font-[860] text-[1.22rem] md:text-xl leading-[1.08] mb-1.5 md:mb-3">降低长期风险</h4>
                                             <p className="max-w-[15rem] text-slate-200/[0.92] text-[0.98rem] md:text-lg leading-[1.55rem] md:leading-relaxed">把度数控制得更稳，也是在帮孩子降低未来高度近视风险。</p>
                                         </div>
                                     </div>
@@ -476,7 +476,7 @@ export default function Hero() {
                                             <span className="text-[10px] font-medium tracking-[0.18em] text-emerald-300/76 uppercase">更值得长期选择</span>
                                         </div>
                                         <div className="flex min-h-[2.6rem] items-start">
-                                            <h4 className="text-[1.36rem] font-semibold leading-[1.15] text-slate-50 tracking-[0.01em]">OXYLIFE 主动校准</h4>
+                                            <h3 className="text-[1.36rem] font-semibold leading-[1.15] text-slate-50 tracking-[0.01em]">OXYLIFE 主动校准</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -490,7 +490,7 @@ export default function Hero() {
                                                 <span className="text-[10px] md:text-[11px] font-medium tracking-[0.18em] text-emerald-300/76 uppercase">更值得长期选择</span>
                                             </div>
                                             <div className="flex min-h-[2.75rem] items-start">
-                                                <h4 className="text-[1.48rem] md:text-[1.62rem] font-semibold leading-[1.15] text-slate-50 tracking-[0.01em]">OXYLIFE 主动校准</h4>
+                                                <h3 className="text-[1.48rem] md:text-[1.62rem] font-semibold leading-[1.15] text-slate-50 tracking-[0.01em]">OXYLIFE 主动校准</h3>
                                             </div>
                                         </div>
                                     </div>

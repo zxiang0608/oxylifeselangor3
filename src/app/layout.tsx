@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     siteName: "Oxylife",
-    locale: "zh_CN",
+    locale: "zh_MY",
     title: seoTitle,
     description: seoDescription,
   },

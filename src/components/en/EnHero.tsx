@@ -51,7 +51,7 @@ export default function Hero() {
                             <div className="absolute bottom-[8%] h-16 w-[84%] rounded-full bg-black/60 blur-[28px] opacity-85 sm:w-[78%]"></div>
                             <div className="absolute bottom-[8.8%] h-[1px] w-[62%] bg-gradient-to-r from-transparent via-emerald-400/16 to-transparent"></div>
                             <div className="absolute inset-x-[18%] bottom-[20%] h-24 rounded-full bg-emerald-500/[0.035] blur-3xl opacity-75"></div>
-                            <img src={deviceMain} alt="izon" className="relative z-10 -mt-2.5 w-full max-w-[176px] sm:max-w-[205px] md:max-w-[500px] lg:max-w-[600px] drop-shadow-[0_24px_64px_rgba(0,0,0,0.42)] md:drop-shadow-[0_40px_100px_rgba(16,185,129,0.2)]" />
+                            <img src={deviceMain} alt="izon" fetchPriority="high" loading="eager" className="relative z-10 -mt-2.5 w-full max-w-[176px] sm:max-w-[205px] md:max-w-[500px] lg:max-w-[600px] drop-shadow-[0_24px_64px_rgba(0,0,0,0.42)] md:drop-shadow-[0_40px_100px_rgba(16,185,129,0.2)]" />
                         </div>
                     </div>
                     <div className="w-full lg:w-1/2 max-w-[19rem] sm:max-w-[21rem] md:max-w-none flex flex-col items-center md:items-start text-center md:text-left">
@@ -64,13 +64,14 @@ export default function Hero() {
                             </div>
                         </div>
                         <h1 className="text-white mb-2.5 md:mb-8">
-                            <span className="mx-auto flex max-w-[16.8rem] flex-col items-center text-[1.82rem] font-[820] leading-[1] tracking-tight md:hidden">
+                            <span className="sr-only">Worried About Your Child&apos;s Eye Power Increasing Every Year?</span>
+                            <span aria-hidden="true" className="mx-auto flex max-w-[16.8rem] flex-col items-center text-[1.82rem] font-[820] leading-[1] tracking-tight md:hidden">
                                 <span className="block w-full text-center">Worried About Your</span>
                                 <span className="block w-full text-center">Child&apos;s Eye Power</span>
                                 <span className="block w-full text-center text-emerald-300/78">Increasing Every</span>
                                 <span className="block w-full text-center text-emerald-300/78">Year?</span>
                             </span>
-                            <span className="hidden md:block text-[2.68rem] sm:text-[3rem] md:text-[4.75rem] lg:text-[6.5rem] font-[900] leading-[0.93] md:leading-[1.04] tracking-tight">
+                            <span aria-hidden="true" className="hidden md:block text-[2.68rem] sm:text-[3rem] md:text-[4.75rem] lg:text-[6.5rem] font-[900] leading-[0.93] md:leading-[1.04] tracking-tight">
                                 <span className="block text-[0.64em] sm:text-[0.62em] md:text-[0.56em] tracking-[-0.02em]">
                                     Worried About Your Child&apos;s
                                 </span>

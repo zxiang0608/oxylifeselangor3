@@ -7,7 +7,11 @@ export const metadata: Metadata = {
   description:
     "使用 Personal Scope-EX 提供儿童视力评估与咨询服务，协助家长进一步了解孩子的视力情况与后续安排。位于 Petaling Jaya，欢迎 WhatsApp 咨询。",
   alternates: {
-    canonical: "/albert",
+    canonical: "/",
+  },
+  robots: {
+    index: false,
+    follow: false,
   },
 };
 

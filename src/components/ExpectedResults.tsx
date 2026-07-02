@@ -55,7 +55,7 @@ export default function ExpectedResults() {
                                             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-emerald-500/16 bg-emerald-500/[0.05] text-emerald-300">
                                                 {benefit.icon}
                                             </div>
-                                            <h4 className="text-[1.28rem] font-[900] tracking-tight text-white">{benefit.title}</h4>
+                                            <h3 className="text-[1.28rem] font-[900] tracking-tight text-white">{benefit.title}</h3>
                                         </div>
                                         <p className="text-slate-300/92 text-[14px] leading-6 font-medium mx-auto max-w-[18.5rem]">
                                             {benefit.desc}
@@ -74,7 +74,7 @@ export default function ExpectedResults() {
                                             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-emerald-500/16 bg-emerald-500/[0.05] text-emerald-300">
                                                 {benefit.icon}
                                             </div>
-                                            <h4 className="text-[1.4rem] md:text-[1.55rem] font-[900] tracking-tight text-white">{benefit.title}</h4>
+                                            <h3 className="text-[1.4rem] md:text-[1.55rem] font-[900] tracking-tight text-white">{benefit.title}</h3>
                                         </div>
                                         <p className="text-slate-400 text-[15px] md:text-[16px] leading-6 md:leading-7 font-medium max-w-[34ch] md:whitespace-nowrap mx-auto">
                                             {benefit.desc}

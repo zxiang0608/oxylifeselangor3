@@ -45,6 +45,7 @@ export default function Footer() {
                             <Link href="/" className="hover:text-emerald-300 transition-colors no-underline">首页咨询概览</Link>
                             <Link href="/albert" className="hover:text-emerald-300 transition-colors no-underline">儿童视力评估咨询</Link>
                             <Link href="/michelle" className="hover:text-emerald-300 transition-colors no-underline">儿童视力咨询体验</Link>
+                            <Link href="/sewa" className="hover:text-emerald-300 transition-colors no-underline">IZON 设备租用</Link>
                         </div>
                         <div className="flex flex-col gap-2 text-[14px] text-slate-300">
                             <a href="#" className="hover:text-emerald-300 transition-colors no-underline">Privacy Policy</a>

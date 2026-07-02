@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     languages: {
       en: "/en",
       "zh-Hans": "/",
+      "x-default": "/",
     },
   },
   openGraph: {

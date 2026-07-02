@@ -87,7 +87,7 @@ export default function MechanismSection() {
                                         </div>
                                         <div className="min-w-0 flex-1">
                                             <span className="mb-0.5 block text-[10px] font-semibold tracking-[0.14em] text-slate-400/72">{method.subtitle}</span>
-                                            <h4 className="text-[1.28rem] font-[900] tracking-tight leading-[1.08] text-white">{method.title}</h4>
+                                            <h3 className="text-[1.28rem] font-[900] tracking-tight leading-[1.08] text-white">{method.title}</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -140,7 +140,7 @@ export default function MechanismSection() {
                                         </div>
                                         <div className="min-w-0 flex-1 pl-1 md:pl-4 lg:pl-9">
                                             <span className="mb-1.5 block text-[12px] md:text-[13px] font-semibold tracking-[0.14em] text-slate-400/72">{method.subtitle}</span>
-                                            <h4 className="text-[1.62rem] md:text-[1.72rem] lg:text-[1.88rem] font-[900] tracking-tight leading-[1.08] text-white">{method.title}</h4>
+                                            <h3 className="text-[1.62rem] md:text-[1.72rem] lg:text-[1.88rem] font-[900] tracking-tight leading-[1.08] text-white">{method.title}</h3>
                                         </div>
                                     </div>
                                 </div>
